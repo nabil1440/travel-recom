@@ -1,0 +1,64 @@
+# =========================
+# .NET / C#
+# =========================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code (just in case)
+.idea/
+.vscode/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Test results
+# =========================
+TestResults/
+
+# =========================
+# Coverage
+# =========================
+coverage/
+coverage.cobertura.xml
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Docker
+# =========================
+**/docker-compose.override.yml
+
+# =========================
+# Build outputs
+# =========================
+publish/
+artifacts/
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.bak

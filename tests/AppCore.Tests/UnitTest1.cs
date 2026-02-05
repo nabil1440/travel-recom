@@ -1,10 +1,10 @@
-﻿namespace AppCore.Tests;
+﻿using Xunit;
 
-public class UnitTest1
+public class SanityTests
 {
-    [Fact]
-    public void Test1()
-    {
-
-    }
+	[Fact]
+	public void True_is_true()
+	{
+		Assert.True(true);
+	}
 }

@@ -11,27 +11,31 @@ public static class DistrictSeeder
     public static async Task SeedAsync(
         AppDbContext db,
         string jsonPath,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default
+    )
     {
         if (await db.Districts.AnyAsync(cancellationToken))
             return;
 
         if (!File.Exists(jsonPath))
-            throw new FileNotFoundException(
-                $"District seed file not found at {jsonPath}");
+            throw new FileNotFoundException($"District seed file not found at {jsonPath}");
 
         var json = await File.ReadAllTextAsync(jsonPath, cancellationToken);
 
-        var dtos = JsonSerializer.Deserialize<List<DistrictSeedDto>>(json)
+        var root =
+            JsonSerializer.Deserialize<DistrictSeedRoot>(json)
             ?? throw new InvalidOperationException("Invalid district seed file");
 
+        var dtos = root.Districts;
+
         var districts = dtos.Select(dto => new DistrictEntity
-        {
-            Id = int.Parse(dto.Id, CultureInfo.InvariantCulture),
-            Name = dto.Name,
-            Latitude = double.Parse(dto.Latitude, CultureInfo.InvariantCulture),
-            Longitude = double.Parse(dto.Longitude, CultureInfo.InvariantCulture)
-        }).ToList();
+            {
+                Id = int.Parse(dto.Id, CultureInfo.InvariantCulture),
+                Name = dto.Name,
+                Latitude = double.Parse(dto.Latitude, CultureInfo.InvariantCulture),
+                Longitude = double.Parse(dto.Longitude, CultureInfo.InvariantCulture)
+            })
+            .ToList();
 
         db.Districts.AddRange(districts);
         await db.SaveChangesAsync(cancellationToken);

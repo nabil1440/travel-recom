@@ -16,3 +16,9 @@ internal sealed class DistrictSeedDto
     [JsonPropertyName("long")]
     public string Longitude { get; set; } = null!;
 }
+
+internal sealed class DistrictSeedRoot
+{
+    [JsonPropertyName("districts")]
+    public List<DistrictSeedDto> Districts { get; set; } = [];
+}

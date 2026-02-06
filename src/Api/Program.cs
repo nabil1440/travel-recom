@@ -23,7 +23,7 @@ builder.Services.AddHangfireServer();
 
 var app = builder.Build();
 
-app.ApplyMigrations();
+await app.ApplyMigrationsAsync();
 
 BackgroundJob.Enqueue<LeaderboardRefreshJob>(
     job => job.RunAsync(CancellationToken.None)

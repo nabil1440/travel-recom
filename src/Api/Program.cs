@@ -6,6 +6,7 @@ using Api.Middleware;
 using Hangfire;
 using Hangfire.PostgreSql;
 using Infrastructure.BackgroundJobs;
+using Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ builder.Services.AddHangfire(config =>
 builder.Services.AddHangfireServer();
 
 var app = builder.Build();
+
+app.ApplyMigrations();
 
 RecurringJob.AddOrUpdate<LeaderboardRefreshJob>(
     "leaderboard-refresh",

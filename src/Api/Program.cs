@@ -7,6 +7,7 @@ using Infrastructure.BackgroundJobs;
 using Infrastructure.Persistence;
 using Infrastructure.Redis;
 using Microsoft.AspNetCore.Mvc;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,7 +57,7 @@ app.MapControllers();
 
 app.MapGet(
     "/health",
-    async ([FromServices] AppDbContext db, [FromServices] RedisConnection redis) =>
+    async ([FromServices] AppDbContext db, [FromServices] IConnectionMultiplexer redis) =>
     {
         var checks = new Dictionary<string, string>();
         var overallStatus = "ok";
@@ -82,7 +83,7 @@ app.MapGet(
         // Redis check
         try
         {
-            var redisDb = redis.Connection.GetDatabase();
+            var redisDb = redis.GetDatabase();
             await redisDb.PingAsync();
             checks["redis"] = "ok";
         }

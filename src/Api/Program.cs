@@ -2,6 +2,7 @@ using Infrastructure.Redis;
 using Microsoft.AspNetCore.Mvc;
 using Infrastructure.Persistence;
 using Infrastructure;
+using Api.Middleware; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapControllers();
 
 app.MapGet("/health", async (

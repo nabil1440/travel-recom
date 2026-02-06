@@ -1,3 +1,5 @@
+namespace Infrastructure.DataFetching.OpenMeteo; 
+
 internal sealed class OpenMeteoAirQualityResponse
 {
     public HourlyAirQuality Hourly { get; set; } = null!;

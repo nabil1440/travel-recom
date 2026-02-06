@@ -1,4 +1,4 @@
-namespace Infrastructure.DataFetching;
+namespace Infrastructure.DataFetching.OpenMeteo;
 
 using System.Globalization;
 using System.Net.Http.Json;

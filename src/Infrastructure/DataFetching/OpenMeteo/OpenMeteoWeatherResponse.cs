@@ -1,3 +1,4 @@
+namespace Infrastructure.DataFetching.OpenMeteo;
 internal sealed class OpenMeteoWeatherResponse
 {
     public HourlyWeather Hourly { get; set; } = null!;

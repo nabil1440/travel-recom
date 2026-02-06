@@ -21,25 +21,39 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(
         this IServiceCollection services,
-        IConfiguration config)
+        IConfiguration config
+    )
     {
         // ---------- Database ----------
         services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(
-                config.GetConnectionString("Postgres")));
+            options.UseNpgsql(config.GetConnectionString("Postgres"))
+        );
 
         // ---------- Redis ----------
         services.AddSingleton<IConnectionMultiplexer>(_ =>
-            ConnectionMultiplexer.Connect(
-                config.GetConnectionString("Redis")));
+            ConnectionMultiplexer.Connect(config.GetConnectionString("Redis"))
+        );
 
         // ---------- External data fetching ----------
-        services.AddHttpClient<IDataFetchingService, OpenMeteoDataFetchingService>(
+        services.AddHttpClient(
+            "OpenMeteoWeather",
             client =>
             {
                 client.BaseAddress = new Uri("https://api.open-meteo.com/v1/");
                 client.Timeout = TimeSpan.FromSeconds(10);
-            });
+            }
+        );
+
+        services.AddHttpClient(
+            "OpenMeteoAirQuality",
+            client =>
+            {
+                client.BaseAddress = new Uri("https://air-quality-api.open-meteo.com/v1/");
+                client.Timeout = TimeSpan.FromSeconds(10);
+            }
+        );
+
+        services.AddScoped<IDataFetchingService, OpenMeteoDataFetchingService>();
 
         // ---------- AppCore logic ----------
         services.AddScoped<IWeatherAggregationService, WeatherAggregationService>();

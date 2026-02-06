@@ -7,11 +7,13 @@ using AppCore.Models;
 
 public sealed class OpenMeteoDataFetchingService : IDataFetchingService
 {
-    private readonly HttpClient _httpClient;
+    private readonly HttpClient _weatherClient;
+    private readonly HttpClient _airQualityClient;
 
-    public OpenMeteoDataFetchingService(HttpClient httpClient)
+    public OpenMeteoDataFetchingService(IHttpClientFactory factory)
     {
-        _httpClient = httpClient;
+        _weatherClient = factory.CreateClient("OpenMeteoWeather");
+        _airQualityClient = factory.CreateClient("OpenMeteoAirQuality");
     }
 
     public async Task<RawWeatherForecast> GetWeatherForecastAsync(
@@ -24,7 +26,7 @@ public sealed class OpenMeteoDataFetchingService : IDataFetchingService
             $"&hourly=temperature_2m&timezone=UTC";
 
         var response =
-            await _httpClient.GetFromJsonAsync<OpenMeteoWeatherResponse>(
+            await _weatherClient.GetFromJsonAsync<OpenMeteoWeatherResponse>(
                 url,
                 cancellationToken);
 
@@ -47,7 +49,7 @@ public sealed class OpenMeteoDataFetchingService : IDataFetchingService
             $"&hourly=pm2_5&timezone=UTC";
 
         var response =
-            await _httpClient.GetFromJsonAsync<OpenMeteoAirQualityResponse>(
+            await _airQualityClient.GetFromJsonAsync<OpenMeteoAirQualityResponse>(
                 url,
                 cancellationToken);
 

@@ -6,6 +6,7 @@ using AppCore.Abstractions.Leaderboard;
 using AppCore.Abstractions.Persistence;
 using AppCore.Abstractions.Services;
 using AppCore.Models;
+using Microsoft.Extensions.Logging;
 
 public sealed class DistrictRankingService : IDistrictRankingService
 {
@@ -14,13 +15,15 @@ public sealed class DistrictRankingService : IDistrictRankingService
   private readonly IWeatherSnapshotRepository _snapshotRepository;
   private readonly ILeaderboardStore _leaderboardStore;
   private readonly IDistrictService _districtService;
+  private readonly ILogger<DistrictRankingService> _logger;
 
   public DistrictRankingService(
       IDataFetchingService dataFetchingService,
       IWeatherAggregationService aggregationService,
       IWeatherSnapshotRepository snapshotRepository,
       IDistrictService districtService,
-      ILeaderboardStore leaderboardStore
+      ILeaderboardStore leaderboardStore,
+      ILogger<DistrictRankingService> logger
   )
   {
     _dataFetchingService = dataFetchingService;
@@ -28,6 +31,7 @@ public sealed class DistrictRankingService : IDistrictRankingService
     _snapshotRepository = snapshotRepository;
     _leaderboardStore = leaderboardStore;
     _districtService = districtService;
+    _logger = logger;
   }
 
   public async Task RefreshLeaderboardAsync(CancellationToken cancellationToken)
@@ -133,10 +137,15 @@ public sealed class DistrictRankingService : IDistrictRankingService
           airQualityTask.Result
       );
     }
-    catch (Exception)
+    catch (Exception ex)
     {
-      // Log here (do NOT throw)
-      // We want partial success, not total failure
+      _logger.LogWarning(
+          ex,
+          "Failed to refresh weather data for district {DistrictId} ({DistrictName})",
+          district.Id,
+          district.Name
+      );
+
       return null;
     }
   }

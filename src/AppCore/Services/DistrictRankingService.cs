@@ -9,100 +9,135 @@ using AppCore.Models;
 
 public sealed class DistrictRankingService : IDistrictRankingService
 {
-    private readonly IDataFetchingService _dataFetchingService;
-    private readonly IWeatherAggregationService _aggregationService;
-    private readonly IWeatherSnapshotRepository _snapshotRepository;
-    private readonly ILeaderboardStore _leaderboardStore;
-    private readonly IDistrictService _districtService;
+  private readonly IDataFetchingService _dataFetchingService;
+  private readonly IWeatherAggregationService _aggregationService;
+  private readonly IWeatherSnapshotRepository _snapshotRepository;
+  private readonly ILeaderboardStore _leaderboardStore;
+  private readonly IDistrictService _districtService;
 
-    public DistrictRankingService(
-        IDataFetchingService dataFetchingService,
-        IWeatherAggregationService aggregationService,
-        IWeatherSnapshotRepository snapshotRepository,
-        IDistrictService districtService, 
-        ILeaderboardStore leaderboardStore)
+  public DistrictRankingService(
+      IDataFetchingService dataFetchingService,
+      IWeatherAggregationService aggregationService,
+      IWeatherSnapshotRepository snapshotRepository,
+      IDistrictService districtService,
+      ILeaderboardStore leaderboardStore
+  )
+  {
+    _dataFetchingService = dataFetchingService;
+    _aggregationService = aggregationService;
+    _snapshotRepository = snapshotRepository;
+    _leaderboardStore = leaderboardStore;
+    _districtService = districtService;
+  }
+
+  public async Task RefreshLeaderboardAsync(CancellationToken cancellationToken)
+  {
+    var districts = await GetDistrictsAsync(cancellationToken);
+
+    if (districts.Count == 0)
     {
-        _dataFetchingService = dataFetchingService;
-        _aggregationService = aggregationService;
-        _snapshotRepository = snapshotRepository;
-        _leaderboardStore = leaderboardStore;
-        _districtService = districtService;
+      return;
     }
 
-    public async Task RefreshLeaderboardAsync(CancellationToken cancellationToken)
+    // Build lookup once
+    var districtMap = districts.ToDictionary(d => d.Id);
+
+    // Parallel fetch + aggregation
+    var tasks = districts.Select(d => FetchAndAggregateAsync(d, cancellationToken));
+
+    var results = await Task.WhenAll(tasks);
+
+    var snapshots = results.Where(s => s is not null).Cast<DistrictWeatherSnapshot>().ToList();
+
+    if (snapshots.Count == 0)
     {
-        // NOTE:
-        // District list source will be injected later (DB or config)
-        // For now assume districts are already available
-        var districts = await GetDistrictsAsync(cancellationToken);
-
-        var snapshots = new List<DistrictWeatherSnapshot>();
-
-        foreach (var district in districts)
-        {
-            var weather = await _dataFetchingService.GetWeatherForecastAsync(
-                district.Latitude,
-                district.Longitude,
-                cancellationToken);
-
-            var airQuality = await _dataFetchingService.GetAirQualityForecastAsync(
-                district.Latitude,
-                district.Longitude,
-                cancellationToken);
-
-            var snapshot = _aggregationService.Aggregate(
-                district,
-                weather,
-                airQuality);
-
-            snapshots.Add(snapshot);
-        }
-
-        await _snapshotRepository.SaveAsync(snapshots, cancellationToken);
-
-        var rankedDistricts = snapshots
-            .Join(
-                districts,
-                s => s.DistrictId,
-                d => d.Id,
-                (s, d) => new
-                {
-                    d.Id,
-                    d.Name,
-                    s.Temp2Pm,
-                    s.Pm25_2Pm
-                })
-            .OrderBy(x => x.Temp2Pm)
-            .ThenBy(x => x.Pm25_2Pm)
-            .Select((x, index) => new RankedDistrict(
-                x.Id,
-                x.Name,
-                x.Temp2Pm,
-                x.Pm25_2Pm,
-                index + 1))
-            .ToList();
-
-        await _leaderboardStore.StoreAsync(rankedDistricts, cancellationToken);
+      // No successful updates, keep existing leaderboard
+      return;
     }
 
-    public async Task<IReadOnlyCollection<RankedDistrict>> GetTopDistrictsAsync(
-        int count,
-        CancellationToken cancellationToken)
+    // Persist raw snapshots (source of truth)
+    await _snapshotRepository.SaveAsync(snapshots, cancellationToken);
+
+    // Rank + enrich with district metadata
+    var rankedDistricts = snapshots
+        .Where(s => districtMap.ContainsKey(s.DistrictId))
+        .OrderBy(s => s.Temp2Pm)
+        .ThenBy(s => s.Pm25_2Pm)
+        .Select(
+            (s, index) =>
+            {
+              var district = districtMap[s.DistrictId];
+
+              return new RankedDistrict(
+                      s.DistrictId,
+                      district.Name,
+                      s.Temp2Pm,
+                      s.Pm25_2Pm,
+                      index + 1
+                  );
+            }
+        )
+        .ToList();
+
+    // Store leaderboard projection (Redis ZSET)
+    await _leaderboardStore.StoreAsync(rankedDistricts, cancellationToken);
+  }
+
+  public async Task<IReadOnlyCollection<RankedDistrict>> GetTopDistrictsAsync(
+      int count,
+      CancellationToken cancellationToken
+  )
+  {
+    var results = await _leaderboardStore.GetTopDistrictsAsync(count, cancellationToken);
+
+    if (results.Count == 0)
     {
-        var results = await _leaderboardStore.GetTopDistrictsAsync(count, cancellationToken);
-
-        if (results.Count == 0)
-        {
-            throw new InvalidOperationException("Leaderboard data not ready.");
-        }
-
-        return results;
+      throw new InvalidOperationException("Leaderboard data not ready.");
     }
 
-    private async Task<IReadOnlyCollection<District>> GetDistrictsAsync(
-        CancellationToken cancellationToken)
+    return results;
+  }
+
+  private async Task<IReadOnlyCollection<District>> GetDistrictsAsync(
+      CancellationToken cancellationToken
+  )
+  {
+    var districts = await _districtService.GetDistrictsAsync(cancellationToken);
+    return districts;
+  }
+
+  private async Task<DistrictWeatherSnapshot?> FetchAndAggregateAsync(
+      District district,
+      CancellationToken cancellationToken
+  )
+  {
+    try
     {
-        var districts = await _districtService.GetDistrictsAsync(cancellationToken);
-        return districts; 
+      var weatherTask = _dataFetchingService.GetWeatherForecastAsync(
+          district.Latitude,
+          district.Longitude,
+          cancellationToken
+      );
+
+      var airQualityTask = _dataFetchingService.GetAirQualityForecastAsync(
+          district.Latitude,
+          district.Longitude,
+          cancellationToken
+      );
+
+      await Task.WhenAll(weatherTask, airQualityTask);
+
+      return _aggregationService.Aggregate(
+          district,
+          weatherTask.Result,
+          airQualityTask.Result
+      );
     }
+    catch (Exception)
+    {
+      // Log here (do NOT throw)
+      // We want partial success, not total failure
+      return null;
+    }
+  }
 }

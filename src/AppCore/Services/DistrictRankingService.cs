@@ -13,17 +13,20 @@ public sealed class DistrictRankingService : IDistrictRankingService
     private readonly IWeatherAggregationService _aggregationService;
     private readonly IWeatherSnapshotRepository _snapshotRepository;
     private readonly ILeaderboardStore _leaderboardStore;
+    private readonly IDistrictService _districtService;
 
     public DistrictRankingService(
         IDataFetchingService dataFetchingService,
         IWeatherAggregationService aggregationService,
         IWeatherSnapshotRepository snapshotRepository,
+        IDistrictService districtService, 
         ILeaderboardStore leaderboardStore)
     {
         _dataFetchingService = dataFetchingService;
         _aggregationService = aggregationService;
         _snapshotRepository = snapshotRepository;
         _leaderboardStore = leaderboardStore;
+        _districtService = districtService;
     }
 
     public async Task RefreshLeaderboardAsync(CancellationToken cancellationToken)
@@ -96,11 +99,10 @@ public sealed class DistrictRankingService : IDistrictRankingService
         return results;
     }
 
-    private static Task<IReadOnlyCollection<District>> GetDistrictsAsync(
+    private async Task<IReadOnlyCollection<District>> GetDistrictsAsync(
         CancellationToken cancellationToken)
     {
-        // Placeholder for now.
-        // This will later be backed by DB or cached data.
-        throw new NotImplementedException("District source not wired yet.");
+        var districts = await _districtService.GetDistrictsAsync(cancellationToken);
+        return districts; 
     }
 }

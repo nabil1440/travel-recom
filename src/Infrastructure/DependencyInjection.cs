@@ -58,9 +58,11 @@ public static class DependencyInjection
         // ---------- AppCore logic ----------
         services.AddScoped<IWeatherAggregationService, WeatherAggregationService>();
         services.AddScoped<IDistrictRankingService, DistrictRankingService>();
+        services.AddScoped<IDistrictService, DistrictService>();
 
         // ---------- Persistence ----------
         services.AddScoped<IWeatherSnapshotRepository, WeatherSnapshotRepository>();
+        services.AddScoped<IDistrictRepository, DistrictRepository>();
 
         // ---------- Leaderboard ----------
         services.AddScoped<ILeaderboardStore, RedisLeaderboardStore>();

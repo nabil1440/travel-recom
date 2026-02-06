@@ -2,7 +2,10 @@ using Infrastructure.Redis;
 using Microsoft.AspNetCore.Mvc;
 using Infrastructure.Persistence;
 using Infrastructure;
-using Api.Middleware; 
+using Api.Middleware;
+using Hangfire;
+using Hangfire.PostgreSql;
+using Infrastructure.BackgroundJobs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +14,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddInfrastructure(builder.Configuration); 
+builder.Services.AddHangfire(config =>
+    config.UsePostgreSqlStorage(
+        builder.Configuration.GetConnectionString("Postgres")));
+
+builder.Services.AddHangfireServer();
 
 var app = builder.Build();
+
+RecurringJob.AddOrUpdate<LeaderboardRefreshJob>(
+    "leaderboard-refresh",
+    job => job.RunAsync(CancellationToken.None),
+    Cron.Hourly);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -23,6 +36,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+app.UseHangfireDashboard("/hangfire");
+
 app.MapControllers();
 
 app.MapGet("/health", async (

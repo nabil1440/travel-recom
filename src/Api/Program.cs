@@ -25,6 +25,10 @@ var app = builder.Build();
 
 app.ApplyMigrations();
 
+BackgroundJob.Enqueue<LeaderboardRefreshJob>(
+    job => job.RunAsync(CancellationToken.None)
+);
+
 RecurringJob.AddOrUpdate<LeaderboardRefreshJob>(
     "leaderboard-refresh",
     job => job.RunAsync(CancellationToken.None),

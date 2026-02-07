@@ -11,6 +11,10 @@ public sealed class OpenMeteoDataFetchingService : IDataFetchingService
     private const int MaxRetries = 4;
     private static readonly TimeSpan BaseDelay = TimeSpan.FromMilliseconds(400);
     private static readonly TimeSpan MaxDelay = TimeSpan.FromSeconds(5);
+    private static readonly JsonSerializerOptions JsonOptions = new()
+    {
+        PropertyNameCaseInsensitive = true
+    };
 
     private readonly HttpClient _weatherClient;
     private readonly HttpClient _airQualityClient;
@@ -51,7 +55,7 @@ public sealed class OpenMeteoDataFetchingService : IDataFetchingService
     {
         var url =
             $"air-quality?latitude={latitude}&longitude={longitude}" +
-            $"&hourly=pm2_5&timezone=UTC";
+            $"&hourly=pm2_5&timezone=UTC&forecast_days=7";
 
         var response = await GetFromJsonWithRetryAsync<OpenMeteoAirQualityResponse>(
             _airQualityClient,
@@ -97,7 +101,10 @@ public sealed class OpenMeteoDataFetchingService : IDataFetchingService
             if (response.IsSuccessStatusCode)
             {
                 await using var contentStream = await response.Content.ReadAsStreamAsync(cancellationToken);
-                return await JsonSerializer.DeserializeAsync<T>(contentStream, cancellationToken: cancellationToken);
+                return await JsonSerializer.DeserializeAsync<T>(
+                    contentStream,
+                    JsonOptions,
+                    cancellationToken);
             }
 
             if (!ShouldRetry(response.StatusCode) || attempt >= MaxRetries)

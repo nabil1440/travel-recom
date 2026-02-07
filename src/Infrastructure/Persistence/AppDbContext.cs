@@ -33,7 +33,9 @@ public class AppDbContext : DbContext
 
       entity.HasKey(e => e.Id);
 
-      entity.HasIndex(e => new { e.DistrictId, e.Date }).IsUnique();
+      entity.Property(e => e.AggregationDate).HasColumnName("date");
+
+      entity.HasIndex(e => new { e.DistrictId, e.AggregationDate }).IsUnique();
 
       entity.HasOne(e => e.District).WithMany().HasForeignKey(e => e.DistrictId);
     });

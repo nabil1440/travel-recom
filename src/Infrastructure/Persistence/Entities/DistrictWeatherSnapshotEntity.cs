@@ -6,7 +6,7 @@ public class DistrictWeatherSnapshotEntity
 
     public int DistrictId { get; set; }
 
-    public DateOnly Date { get; set; }
+    public DateOnly AggregationDate { get; set; }
 
     public double Temp2Pm { get; set; }
 

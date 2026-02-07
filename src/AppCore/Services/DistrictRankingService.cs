@@ -10,18 +10,21 @@ using Microsoft.Extensions.Logging;
 public sealed class DistrictRankingService : IDistrictRankingService
 {
   private readonly IWeatherSnapshotRepository _snapshotRepository;
+  private readonly ILeaderboardSnapshotRepository _leaderboardSnapshotRepository;
   private readonly ILeaderboardStore _leaderboardStore;
   private readonly IDistrictService _districtService;
   private readonly ILogger<DistrictRankingService> _logger;
 
   public DistrictRankingService(
       IWeatherSnapshotRepository snapshotRepository,
+      ILeaderboardSnapshotRepository leaderboardSnapshotRepository,
       IDistrictService districtService,
       ILeaderboardStore leaderboardStore,
       ILogger<DistrictRankingService> logger
   )
   {
     _snapshotRepository = snapshotRepository;
+    _leaderboardSnapshotRepository = leaderboardSnapshotRepository;
     _leaderboardStore = leaderboardStore;
     _districtService = districtService;
     _logger = logger;
@@ -86,6 +89,11 @@ public sealed class DistrictRankingService : IDistrictRankingService
 
     // Store leaderboard projection (Redis ZSET)
     await _leaderboardStore.StoreAsync(rankedDistricts, cancellationToken);
+
+    await _leaderboardSnapshotRepository.SaveAsync(
+      rankedDistricts,
+      DateTime.UtcNow,
+      cancellationToken);
 
     _logger.LogInformation(
       "DistrictRankingService completed: {Count} districts ranked for batch {BatchId}",

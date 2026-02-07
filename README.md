@@ -146,10 +146,6 @@ Response:
 }
 ```
 
-### GET /hangfire
-
-Hangfire dashboard for background jobs (no auth in dev).
-
 ## Dependencies
 
 - .NET 10 SDK (for local development and tests)

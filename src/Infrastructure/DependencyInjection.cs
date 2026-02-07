@@ -8,6 +8,7 @@ using AppCore.Abstractions.Services;
 using AppCore.Events;
 using AppCore.Services;
 using Infrastructure.BackgroundJobs;
+using Infrastructure.Caching;
 using Infrastructure.DataFetching.OpenMeteo;
 using Infrastructure.Events;
 using Infrastructure.Events.Consumers;
@@ -75,6 +76,9 @@ public static class DependencyInjection
     services.AddScoped<IWeatherSnapshotRepository, WeatherSnapshotRepository>();
     services.AddScoped<ILeaderboardSnapshotRepository, LeaderboardSnapshotRepository>();
     services.AddScoped<IDistrictRepository, DistrictRepository>();
+
+    // ---------- Leaderboard ----------
+    services.AddScoped<ILeaderboardStore, RedisLeaderboardStore>();
 
     // ---------- Background & infra helpers ----------
     services.AddSingleton<ILeaderElectionService, RedisLeaderElectionService>();

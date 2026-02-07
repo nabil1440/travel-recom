@@ -19,8 +19,10 @@ public sealed class HangfireEventJob<TEvent>
 
     public async Task ExecuteAsync(TEvent @event)
     {
-        var tasks = _consumers.Select(consumer => RunConsumerAsync(consumer, @event));
-        await Task.WhenAll(tasks);
+        foreach (var consumer in _consumers)
+        {
+            await RunConsumerAsync(consumer, @event);
+        }
     }
 
     private async Task RunConsumerAsync(IEventConsumer<TEvent> consumer, TEvent @event)

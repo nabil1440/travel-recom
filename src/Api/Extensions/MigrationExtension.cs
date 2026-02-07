@@ -15,11 +15,11 @@ public static class MigrationExtensions
 
     var env = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
 
-    var seedPath = Path.Combine(
-        env.ContentRootPath,
-        "Seed",
-        "districts.bd.json");
+    var seedPaths = new SeedFilePaths(
+        Path.Combine(env.ContentRootPath, "Seed", "districts.bd.json"),
+        Path.Combine(env.ContentRootPath, "Seed", "district_weather_snapshots_seed.json"),
+        Path.Combine(env.ContentRootPath, "Seed", "daily_district_forecasts.json"));
 
-    await DistrictSeeder.SeedAsync(db, seedPath);
+    await DatabaseSeeder.SeedAsync(db, seedPaths);
 }
 }

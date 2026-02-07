@@ -8,15 +8,18 @@ public sealed class TravelRecommendationService : ITravelRecommendationService
     private readonly ISourceDistrictResolver _sourceResolver;
     private readonly IForecastLookupService _forecastLookup;
     private readonly ITravelComparisonService _comparisonService;
+    private readonly IDistrictService _districtService;
 
     public TravelRecommendationService(
         ISourceDistrictResolver sourceResolver,
         IForecastLookupService forecastLookup,
-        ITravelComparisonService comparisonService)
+        ITravelComparisonService comparisonService,
+        IDistrictService districtService)
     {
         _sourceResolver = sourceResolver;
         _forecastLookup = forecastLookup;
         _comparisonService = comparisonService;
+        _districtService = districtService;
     }
 
     public async Task<TravelRecommendationResult> RecommendAsync(
@@ -40,8 +43,21 @@ public sealed class TravelRecommendationService : ITravelRecommendationService
 
         var sourceDistrictId = sourceResult.DistrictId.Value;
 
+        var destinationDistrictId = await ResolveDestinationDistrictIdAsync(
+            request.DestinationDistrictName,
+            cancellationToken);
+
+        if (destinationDistrictId is null)
+        {
+            return new TravelRecommendationResult(
+                IsRecommended: false,
+                TempDelta: 0,
+                AirQualityDelta: 0,
+                ReasonCode: RecommendationReasonCode.InvalidDestinationDistrict);
+        }
+
         // 2. Validate destination
-        if (sourceDistrictId == request.DestinationDistrictId)
+        if (sourceDistrictId == destinationDistrictId.Value)
         {
             return new TravelRecommendationResult(
                 IsRecommended: false,
@@ -57,7 +73,7 @@ public sealed class TravelRecommendationService : ITravelRecommendationService
             cancellationToken);
 
         var destinationForecastResult = await _forecastLookup.GetForecastAsync(
-            request.DestinationDistrictId,
+            destinationDistrictId.Value,
             request.TravelDate,
             cancellationToken);
 
@@ -74,5 +90,20 @@ public sealed class TravelRecommendationService : ITravelRecommendationService
         return _comparisonService.Compare(
             sourceForecastResult.Forecast!,
             destinationForecastResult.Forecast!);
+    }
+
+    private async Task<int?> ResolveDestinationDistrictIdAsync(
+        string destinationDistrictName,
+        CancellationToken cancellationToken)
+    {
+        var districts = await _districtService.GetDistrictsAsync(cancellationToken);
+
+        var match = districts.FirstOrDefault(d =>
+            string.Equals(
+                d.Name,
+                destinationDistrictName,
+                StringComparison.OrdinalIgnoreCase));
+
+        return match?.Id;
     }
 }

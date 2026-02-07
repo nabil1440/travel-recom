@@ -77,7 +77,7 @@ public static class DependencyInjection
     services.AddScoped<IDistrictRepository, DistrictRepository>();
 
     // ---------- Background & infra helpers ----------
-    services.AddSingleton<RedisLeaderElectionService>();
+    services.AddSingleton<ILeaderElectionService, RedisLeaderElectionService>();
 
     // ---------- Forecast lookup (cache -> DB) ----------
     services.AddScoped<IForecastLookupService, ForecastLookupService>();

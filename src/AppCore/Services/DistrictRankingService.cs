@@ -9,16 +9,21 @@ using Microsoft.Extensions.Logging;
 
 public sealed class DistrictRankingService : IDistrictRankingService
 {
+  private static readonly TimeSpan LeaderTtl = TimeSpan.FromMinutes(10);
+  private const string LockName = "district-ranking";
+
   private readonly IWeatherSnapshotRepository _snapshotRepository;
   private readonly ILeaderboardSnapshotRepository _leaderboardSnapshotRepository;
   private readonly ILeaderboardStore _leaderboardStore;
   private readonly IDistrictService _districtService;
+  private readonly ILeaderElectionService _leaderElection;
   private readonly ILogger<DistrictRankingService> _logger;
 
   public DistrictRankingService(
       IWeatherSnapshotRepository snapshotRepository,
       ILeaderboardSnapshotRepository leaderboardSnapshotRepository,
       IDistrictService districtService,
+      ILeaderElectionService leaderElection,
       ILeaderboardStore leaderboardStore,
       ILogger<DistrictRankingService> logger
   )
@@ -27,6 +32,7 @@ public sealed class DistrictRankingService : IDistrictRankingService
     _leaderboardSnapshotRepository = leaderboardSnapshotRepository;
     _leaderboardStore = leaderboardStore;
     _districtService = districtService;
+    _leaderElection = leaderElection;
     _logger = logger;
   }
 
@@ -34,6 +40,19 @@ public sealed class DistrictRankingService : IDistrictRankingService
       WeatherDataBatchFetched @event,
       CancellationToken cancellationToken)
   {
+    var acquired = await _leaderElection.TryAcquireAsync(
+        LockName,
+        LeaderTtl,
+        cancellationToken);
+
+    if (!acquired)
+    {
+      _logger.LogInformation(
+          "DistrictRankingService skipped: not leader for batch {BatchId}",
+          @event.BatchId);
+      return;
+    }
+
     _logger.LogInformation(
         "DistrictRankingService processing batch {BatchId} with {Count} districts",
         @event.BatchId, @event.Districts.Count);

@@ -10,26 +10,42 @@ using Microsoft.Extensions.Logging;
 public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
 {
     private const int TargetUtcHour = 8; // 2 PM GMT+6 -> 08:00 UTC
+    private static readonly TimeSpan LeaderTtl = TimeSpan.FromMinutes(10);
+    private const string LockName = "weather-data-fetch";
 
     private readonly IDistrictService _districtService;
     private readonly IDataFetchingService _dataFetchingService;
     private readonly IEventPublisher _eventPublisher;
+    private readonly ILeaderElectionService _leaderElection;
     private readonly ILogger<WeatherDataBatchFetchService> _logger;
 
     public WeatherDataBatchFetchService(
         IDistrictService districtService,
         IDataFetchingService dataFetchingService,
         IEventPublisher eventPublisher,
+        ILeaderElectionService leaderElection,
         ILogger<WeatherDataBatchFetchService> logger)
     {
         _districtService = districtService;
         _dataFetchingService = dataFetchingService;
         _eventPublisher = eventPublisher;
+        _leaderElection = leaderElection;
         _logger = logger;
     }
 
     public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
+        var acquired = await _leaderElection.TryAcquireAsync(
+            LockName,
+            LeaderTtl,
+            cancellationToken);
+
+        if (!acquired)
+        {
+            _logger.LogInformation("Weather data fetch skipped: not leader");
+            return;
+        }
+
         var districts = await _districtService.GetDistrictsAsync(cancellationToken);
 
         _logger.LogInformation("Weather data fetch started for {Count} districts", districts.Count);

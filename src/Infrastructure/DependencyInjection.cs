@@ -66,6 +66,7 @@ public static class DependencyInjection
     services.AddScoped<IDistrictRankingService, DistrictRankingService>();
     services.AddScoped<IDistrictService, DistrictService>();
     services.AddScoped<IDailyForecastAggregationService, DailyForecastAggregationService>();
+    services.AddScoped<IWeatherDataBatchFetchService, WeatherDataBatchFetchService>();
 
     // ---------- AppCore travel recommendation ----------
     services.AddScoped<ITravelComparisonService, TravelComparisonService>();

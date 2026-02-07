@@ -1,6 +1,5 @@
 ﻿namespace Infrastructure;
 
-using AppCore.Abstractions.Aggregation;
 using AppCore.Abstractions.DataFetching;
 using AppCore.Abstractions.Events;
 using AppCore.Abstractions.Leaderboard;
@@ -12,6 +11,7 @@ using Infrastructure.BackgroundJobs;
 using Infrastructure.Caching;
 using Infrastructure.DataFetching.OpenMeteo;
 using Infrastructure.Events;
+using Infrastructure.Events.Consumers;
 using Infrastructure.Events.Hangfire;
 using Infrastructure.Jobs;
 using Infrastructure.LeaderElection;
@@ -63,9 +63,9 @@ public static class DependencyInjection
     services.AddScoped<IDataFetchingService, OpenMeteoDataFetchingService>();
 
     // ---------- AppCore logic ----------
-    services.AddScoped<IWeatherAggregationService, WeatherAggregationService>();
     services.AddScoped<IDistrictRankingService, DistrictRankingService>();
     services.AddScoped<IDistrictService, DistrictService>();
+    services.AddScoped<IDailyForecastAggregationService, DailyForecastAggregationService>();
 
     // ---------- AppCore travel recommendation ----------
     services.AddScoped<ITravelComparisonService, TravelComparisonService>();
@@ -80,7 +80,6 @@ public static class DependencyInjection
 
     // ---------- Background & infra helpers ----------
     services.AddSingleton<RedisLeaderElectionService>();
-    services.AddScoped<LeaderboardRefreshJob>();
 
     // ---------- Forecast lookup (cache -> DB) ----------
     services.AddScoped<IForecastLookupService, ForecastLookupService>();
@@ -98,8 +97,8 @@ public static class DependencyInjection
     services.AddScoped<IWeatherDataFetchJob, WeatherDataFetchJob>();
 
     services.AddTransient(typeof(HangfireEventJob<>));
-    // services.AddScoped<IEventConsumer<WeatherDataBatchFetched>, DistrictRankingConsumer>();
-    // services.AddScoped<IEventConsumer<WeatherDataBatchFetched>, DailyAggregationConsumer>();
+    services.AddScoped<IEventConsumer<WeatherDataBatchFetched>, DistrictRankingConsumer>();
+    services.AddScoped<IEventConsumer<WeatherDataBatchFetched>, DailyAggregationConsumer>();
 
     return services;
   }

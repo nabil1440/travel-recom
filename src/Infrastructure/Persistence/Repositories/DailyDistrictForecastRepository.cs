@@ -46,15 +46,15 @@ public sealed class DailyDistrictForecastRepository : IDailyDistrictForecastRepo
         foreach (var forecast in forecasts)
         {
             // Upsert semantics: one row per (DistrictId, ForecastDate)
-            var exists = await _db.Set<DailyDistrictForecastEntity>()
-                .AnyAsync(
+            var entity = await _db.Set<DailyDistrictForecastEntity>()
+                .FirstOrDefaultAsync(
                     x => x.DistrictId == forecast.DistrictId &&
                          x.ForecastDate == forecast.ForecastDate,
                     cancellationToken);
 
-            if (!exists)
+            if (entity is null)
             {
-                var entity = new DailyDistrictForecastEntity
+                entity = new DailyDistrictForecastEntity
                 {
                     DistrictId = forecast.DistrictId,
                     ForecastDate = forecast.ForecastDate,
@@ -64,6 +64,12 @@ public sealed class DailyDistrictForecastRepository : IDailyDistrictForecastRepo
                 };
 
                 _db.Add(entity);
+            }
+            else
+            {
+                entity.Temp2Pm = forecast.Temp2Pm;
+                entity.Pm25_2Pm = forecast.Pm25_2Pm;
+                entity.CreatedAt = DateTime.UtcNow;
             }
         }
 

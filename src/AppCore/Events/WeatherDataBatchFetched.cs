@@ -1,15 +1,12 @@
 namespace AppCore.Events;
-
 public sealed record WeatherDataBatchFetched(
-    string BatchId,
     DateTime FetchedAtUtc,
-    IReadOnlyCollection<DistrictWeatherFacts> Districts
+    IReadOnlyCollection<DistrictWeatherFacts> Districts,
+    string? BatchId = null
 );
 
 public sealed record DistrictWeatherFacts(
     int DistrictId,
-    double Latitude,
-    double Longitude,
     IReadOnlyCollection<DailyWeatherFact> Forecasts
 );
 

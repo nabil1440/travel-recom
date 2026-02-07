@@ -6,11 +6,14 @@ using AppCore.Abstractions.Events;
 using AppCore.Abstractions.Leaderboard;
 using AppCore.Abstractions.Persistence;
 using AppCore.Abstractions.Services;
+using AppCore.Events;
 using AppCore.Services;
 using Infrastructure.BackgroundJobs;
 using Infrastructure.Caching;
 using Infrastructure.DataFetching.OpenMeteo;
+using Infrastructure.Events;
 using Infrastructure.Events.Hangfire;
+using Infrastructure.Jobs;
 using Infrastructure.LeaderElection;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Repositories;
@@ -88,9 +91,15 @@ public static class DependencyInjection
     // ---------- Redis daily forecast cache ----------
     services.AddScoped<IDailyForecastCache, RedisDailyForecastCache>();
 
-    services.AddScoped<ISourceDistrictResolver, NearestNeighborSourceDistrictResolver>(); 
+    services.AddScoped<ISourceDistrictResolver, NearestNeighborSourceDistrictResolver>();
 
-    services.AddScoped<IEventPublisher, HangfireEventPublisher>(); 
+    services.AddScoped<IEventPublisher, HangfireEventPublisher>();
+
+    services.AddScoped<IWeatherDataFetchJob, WeatherDataFetchJob>();
+
+    services.AddTransient(typeof(HangfireEventJob<>));
+    // services.AddScoped<IEventConsumer<WeatherDataBatchFetched>, DistrictRankingConsumer>();
+    // services.AddScoped<IEventConsumer<WeatherDataBatchFetched>, DailyAggregationConsumer>();
 
     return services;
   }

@@ -1,7 +1,7 @@
 namespace Infrastructure.Events;
 
-public interface IEventConsumer<TEvent>
+public interface IEventConsumer<in TEvent>
     where TEvent : class
 {
-    Task ConsumeAsync(TEvent @event, CancellationToken cancellationToken);
+    Task ConsumeAsync(TEvent @event);
 }

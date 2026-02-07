@@ -13,4 +13,9 @@ public interface IDailyForecastCache
         DailyForecastCacheItem item,
         TimeSpan ttl,
         CancellationToken cancellationToken);
+
+    Task SetManyAsync(
+        IEnumerable<DailyForecastCacheItem> items,
+        TimeSpan ttl,
+        CancellationToken cancellationToken);
 }

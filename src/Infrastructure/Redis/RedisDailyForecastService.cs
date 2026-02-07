@@ -43,6 +43,25 @@ public sealed class RedisDailyForecastCache : IDailyForecastCache
         await _db.StringSetAsync(key, payload, ttl);
     }
 
+    public async Task SetManyAsync(
+        IEnumerable<DailyForecastCacheItem> items,
+        TimeSpan ttl,
+        CancellationToken cancellationToken)
+    {
+        var batch = _db.CreateBatch();
+        var tasks = new List<Task>();
+
+        foreach (var item in items)
+        {
+            var key = BuildKey(item.DistrictId, item.ForecastDate);
+            var payload = JsonSerializer.Serialize(item);
+            tasks.Add(batch.StringSetAsync(key, payload, ttl));
+        }
+
+        batch.Execute();
+        await Task.WhenAll(tasks);
+    }
+
     private static string BuildKey(int districtId, DateOnly date)
         => $"forecast:{districtId}:{date:yyyy-MM-dd}";
 }

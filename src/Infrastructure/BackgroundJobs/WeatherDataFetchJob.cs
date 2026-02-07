@@ -71,11 +71,14 @@ public sealed class WeatherDataFetchJob : IWeatherDataFetchJob
 
             await Task.WhenAll(weatherTask, airQualityTask);
 
+            var weather = await weatherTask;
+            var airQuality = await airQualityTask;
+
             // Aggregate the data to extract 2PM values (GMT+6 14:00 = GMT 08:00)
             var snapshot = _aggregationService.Aggregate(
                 district,
-                weatherTask.Result,
-                airQualityTask.Result);
+                weather,
+                airQuality);
 
             // Publish event with the extracted 2PM data
             var weatherEvent = new WeatherDataFetchedEvent(
@@ -94,7 +97,7 @@ public sealed class WeatherDataFetchJob : IWeatherDataFetchJob
         }
         catch (Exception ex)
         {
-            _logger.LogWarning(
+            _logger.LogError(
                 ex,
                 "Failed to fetch and publish weather data for district {DistrictId} ({DistrictName})",
                 district.Id,

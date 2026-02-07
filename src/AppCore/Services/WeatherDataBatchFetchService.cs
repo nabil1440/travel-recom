@@ -93,7 +93,18 @@ public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
                 district.Latitude, district.Longitude, cancellationToken);
 
             var tempByDate = Extract2PmValues(weather.Timestamps, weather.Temperatures);
-            var pm25ByDate = Extract2PmValues(airQuality.Timestamps, airQuality.Pm25Values);
+            var (pm25ByDate, pm25NullCount) = Extract2PmValuesWithNulls(
+                airQuality.Timestamps,
+                airQuality.Pm25Values);
+
+            if (pm25NullCount > 0)
+            {
+                _logger.LogInformation(
+                    "Skipped {NullCount} null pm2_5 values for district {DistrictId} ({Name})",
+                    pm25NullCount,
+                    district.Id,
+                    district.Name);
+            }
 
             var commonDates = tempByDate.Keys
                 .Intersect(pm25ByDate.Keys)
@@ -137,7 +148,9 @@ public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
     {
         var result = new Dictionary<DateOnly, double>();
 
-        for (var i = 0; i < timestamps.Count; i++)
+        var count = Math.Min(timestamps.Count, values.Count);
+
+        for (var i = 0; i < count; i++)
         {
             if (timestamps[i].Hour != TargetUtcHour)
                 continue;
@@ -151,5 +164,36 @@ public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
         }
 
         return result;
+    }
+
+    private static (Dictionary<DateOnly, double> Values, int NullCount) Extract2PmValuesWithNulls(
+        IReadOnlyList<DateTime> timestamps,
+        IReadOnlyList<double?> values)
+    {
+        var result = new Dictionary<DateOnly, double>();
+        var count = Math.Min(timestamps.Count, values.Count);
+        var nullCount = 0;
+
+        for (var i = 0; i < count; i++)
+        {
+            if (timestamps[i].Hour != TargetUtcHour)
+                continue;
+
+            var value = values[i];
+            if (value is null)
+            {
+                nullCount++;
+                continue;
+            }
+
+            var date = DateOnly.FromDateTime(timestamps[i]);
+
+            if (!result.ContainsKey(date))
+            {
+                result[date] = value.Value;
+            }
+        }
+
+        return (result, nullCount);
     }
 }

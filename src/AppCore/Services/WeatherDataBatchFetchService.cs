@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
 {
     private const int TargetUtcHour = 8; // 2 PM GMT+6 -> 08:00 UTC
+    private const int MaxConcurrentDistricts = 3;
     private static readonly TimeSpan LeaderTtl = TimeSpan.FromMinutes(10);
     private const string LockName = "weather-data-fetch";
 
@@ -50,7 +51,8 @@ public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
 
         _logger.LogInformation("Weather data fetch started for {Count} districts", districts.Count);
 
-        var tasks = districts.Select(d => FetchForDistrictAsync(d, cancellationToken));
+        using var throttler = new SemaphoreSlim(MaxConcurrentDistricts, MaxConcurrentDistricts);
+        var tasks = districts.Select(d => FetchForDistrictAsync(d, throttler, cancellationToken));
         var results = await Task.WhenAll(tasks);
 
         var districtFacts = results
@@ -78,20 +80,17 @@ public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
 
     private async Task<DistrictWeatherFacts?> FetchForDistrictAsync(
         District district,
+        SemaphoreSlim throttler,
         CancellationToken cancellationToken)
     {
+        await throttler.WaitAsync(cancellationToken);
         try
         {
-            var weatherTask = _dataFetchingService.GetWeatherForecastAsync(
+            var weather = await _dataFetchingService.GetWeatherForecastAsync(
                 district.Latitude, district.Longitude, cancellationToken);
 
-            var airQualityTask = _dataFetchingService.GetAirQualityForecastAsync(
+            var airQuality = await _dataFetchingService.GetAirQualityForecastAsync(
                 district.Latitude, district.Longitude, cancellationToken);
-
-            await Task.WhenAll(weatherTask, airQualityTask);
-
-            var weather = weatherTask.Result;
-            var airQuality = airQualityTask.Result;
 
             var tempByDate = Extract2PmValues(weather.Timestamps, weather.Temperatures);
             var pm25ByDate = Extract2PmValues(airQuality.Timestamps, airQuality.Pm25Values);
@@ -125,6 +124,10 @@ public sealed class WeatherDataBatchFetchService : IWeatherDataBatchFetchService
                 "Failed to fetch weather data for district {DistrictId} ({Name})",
                 district.Id, district.Name);
             return null;
+        }
+        finally
+        {
+            throttler.Release();
         }
     }
 

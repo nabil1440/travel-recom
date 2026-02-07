@@ -5,43 +5,58 @@ namespace Infrastructure.Persistence;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options)
-        : base(options) { }
+  public AppDbContext(DbContextOptions<AppDbContext> options)
+      : base(options) { }
 
-    public DbSet<DistrictEntity> Districts => Set<DistrictEntity>();
+  public DbSet<DistrictEntity> Districts => Set<DistrictEntity>();
 
-    public DbSet<DistrictWeatherSnapshotEntity> DistrictWeatherSnapshots =>
-        Set<DistrictWeatherSnapshotEntity>();
+  public DbSet<DistrictWeatherSnapshotEntity> DistrictWeatherSnapshots =>
+      Set<DistrictWeatherSnapshotEntity>();
 
-    public DbSet<LeaderboardSnapshotEntity> LeaderboardSnapshots =>
-        Set<LeaderboardSnapshotEntity>();
+  public DbSet<LeaderboardSnapshotEntity> LeaderboardSnapshots =>
+      Set<LeaderboardSnapshotEntity>();
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+  public DbSet<DailyDistrictForecastEntity> DailyDistrictForecasts =>
+      Set<DailyDistrictForecastEntity>();
+
+  protected override void OnModelCreating(ModelBuilder modelBuilder)
+  {
+    modelBuilder.Entity<DistrictEntity>(entity =>
     {
-        modelBuilder.Entity<DistrictEntity>(entity =>
-        {
-            entity.ToTable("districts");
-            entity.HasKey(d => d.Id);
-        });
+      entity.ToTable("districts");
+      entity.HasKey(d => d.Id);
+    });
 
-        modelBuilder.Entity<DistrictWeatherSnapshotEntity>(entity =>
-        {
-            entity.ToTable("district_weather_snapshots");
+    modelBuilder.Entity<DistrictWeatherSnapshotEntity>(entity =>
+    {
+      entity.ToTable("district_weather_snapshots");
 
-            entity.HasKey(e => e.Id);
+      entity.HasKey(e => e.Id);
 
-            entity.HasIndex(e => new { e.DistrictId, e.Date }).IsUnique();
+      entity.HasIndex(e => new { e.DistrictId, e.Date }).IsUnique();
 
-            entity.HasOne(e => e.District).WithMany().HasForeignKey(e => e.DistrictId);
-        });
+      entity.HasOne(e => e.District).WithMany().HasForeignKey(e => e.DistrictId);
+    });
 
-        modelBuilder.Entity<LeaderboardSnapshotEntity>(entity =>
-        {
-            entity.ToTable("leaderboard_snapshots");
+    modelBuilder.Entity<LeaderboardSnapshotEntity>(entity =>
+    {
+      entity.ToTable("leaderboard_snapshots");
 
-            entity.HasKey(e => e.Id);
+      entity.HasKey(e => e.Id);
 
-            entity.HasIndex(e => e.GeneratedAt);
-        });
-    }
+      entity.HasIndex(e => e.GeneratedAt);
+    });
+
+    modelBuilder.Entity<DailyDistrictForecastEntity>(entity =>
+    {
+      entity.ToTable("daily_district_forecasts");
+
+      entity.HasKey(e => e.Id);
+
+      // One row per district per forecast date
+      entity.HasIndex(e => new { e.DistrictId, e.ForecastDate }).IsUnique();
+
+      entity.HasOne(e => e.District).WithMany().HasForeignKey(e => e.DistrictId);
+    });
+  }
 }

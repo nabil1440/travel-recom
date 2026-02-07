@@ -29,19 +29,22 @@ public sealed class TravelRecommendationController : ControllerBase
             return BadRequest("Travel date must be in the future.");
         }
 
+        if (string.IsNullOrWhiteSpace(request.Destination))
+        {
+            return BadRequest("Destination district name is required.");
+        }
+
         var result = await _service.RecommendAsync(
             new TravelRecommendationRequest(
                 request.Latitude,
                 request.Longitude,
-                request.DestinationDistrictId,
+                request.Destination.Trim(),
                 request.TravelDate),
             cancellationToken);
 
         var response = new TravelRecommendationResponseDto(
-            Recommended: result.IsRecommended,
-            Reason: MapReason(result),
-            TempDelta: result.TempDelta,
-            AirQualityDelta: result.AirQualityDelta);
+            Recommendation: result.IsRecommended ? "Recommended" : "Not Recommended",
+            Reason: MapReason(result));
 
         return Ok(response);
     }
@@ -65,16 +68,16 @@ public sealed class TravelRecommendationController : ControllerBase
                 "Insufficient forecast data to make a recommendation.",
 
             RecommendationReasonCode.DestinationCoolerAndCleaner =>
-                $"Your destination is {Math.Abs(result.TempDelta):0.#}°C cooler and has better air quality. Enjoy your trip.",
+                $"Your destination is {Math.Abs(result.TempDelta):0.#}°C cooler and has significantly better air quality. Enjoy your trip!",
 
             RecommendationReasonCode.DestinationHotterAndMorePolluted =>
-                "Your destination is hotter and has worse air quality than your current location.",
+                "Your destination is hotter and has worse air quality than your current location. It's better to stay where you are.",
 
             RecommendationReasonCode.DestinationHotter =>
-                "Your destination is hotter than your current location.",
+                "Your destination is hotter than your current location. It's better to stay where you are.",
 
             RecommendationReasonCode.DestinationMorePolluted =>
-                "Your destination has worse air quality than your current location.",
+                "Your destination has worse air quality than your current location. It's better to stay where you are.",
 
             _ => "Unable to determine travel recommendation."
         };

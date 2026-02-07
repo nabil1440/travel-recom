@@ -2,6 +2,7 @@
 
 using AppCore.Abstractions.Aggregation;
 using AppCore.Abstractions.DataFetching;
+using AppCore.Abstractions.Events;
 using AppCore.Abstractions.Leaderboard;
 using AppCore.Abstractions.Persistence;
 using AppCore.Abstractions.Services;
@@ -9,6 +10,7 @@ using AppCore.Services;
 using Infrastructure.BackgroundJobs;
 using Infrastructure.Caching;
 using Infrastructure.DataFetching.OpenMeteo;
+using Infrastructure.Events.Hangfire;
 using Infrastructure.LeaderElection;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Repositories;
@@ -87,6 +89,8 @@ public static class DependencyInjection
     services.AddScoped<IDailyForecastCache, RedisDailyForecastCache>();
 
     services.AddScoped<ISourceDistrictResolver, NearestNeighborSourceDistrictResolver>(); 
+
+    services.AddScoped<IEventPublisher, HangfireEventPublisher>(); 
 
     return services;
   }

@@ -1,0 +1,2563 @@
+{
+"daily_district_forecasts": [
+	{
+		"Id" : 1,
+		"DistrictId" : 1,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.5,
+		"Pm25_2Pm" : 65.7,
+		"CreatedAt" : "2026-02-07T11:41:16.871Z"
+	},
+	{
+		"Id" : 2,
+		"DistrictId" : 1,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.5,
+		"Pm25_2Pm" : 48.3,
+		"CreatedAt" : "2026-02-07T11:41:16.900Z"
+	},
+	{
+		"Id" : 3,
+		"DistrictId" : 1,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 49.5,
+		"CreatedAt" : "2026-02-07T11:41:16.903Z"
+	},
+	{
+		"Id" : 4,
+		"DistrictId" : 1,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 49.6,
+		"CreatedAt" : "2026-02-07T11:41:16.905Z"
+	},
+	{
+		"Id" : 5,
+		"DistrictId" : 1,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 47.5,
+		"CreatedAt" : "2026-02-07T11:41:16.907Z"
+	},
+	{
+		"Id" : 6,
+		"DistrictId" : 2,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.1,
+		"Pm25_2Pm" : 61.5,
+		"CreatedAt" : "2026-02-07T11:41:16.910Z"
+	},
+	{
+		"Id" : 7,
+		"DistrictId" : 2,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.3,
+		"Pm25_2Pm" : 40.9,
+		"CreatedAt" : "2026-02-07T11:41:16.912Z"
+	},
+	{
+		"Id" : 8,
+		"DistrictId" : 2,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 42.5,
+		"CreatedAt" : "2026-02-07T11:41:16.915Z"
+	},
+	{
+		"Id" : 9,
+		"DistrictId" : 2,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.8,
+		"Pm25_2Pm" : 46.6,
+		"CreatedAt" : "2026-02-07T11:41:16.919Z"
+	},
+	{
+		"Id" : 10,
+		"DistrictId" : 2,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.6,
+		"Pm25_2Pm" : 38.8,
+		"CreatedAt" : "2026-02-07T11:41:16.922Z"
+	},
+	{
+		"Id" : 11,
+		"DistrictId" : 3,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 61.9,
+		"CreatedAt" : "2026-02-07T11:41:16.925Z"
+	},
+	{
+		"Id" : 12,
+		"DistrictId" : 3,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.8,
+		"Pm25_2Pm" : 46.9,
+		"CreatedAt" : "2026-02-07T11:41:16.928Z"
+	},
+	{
+		"Id" : 13,
+		"DistrictId" : 3,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.8,
+		"Pm25_2Pm" : 46.3,
+		"CreatedAt" : "2026-02-07T11:41:16.930Z"
+	},
+	{
+		"Id" : 14,
+		"DistrictId" : 3,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 45.4,
+		"CreatedAt" : "2026-02-07T11:41:16.933Z"
+	},
+	{
+		"Id" : 15,
+		"DistrictId" : 3,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 44.9,
+		"CreatedAt" : "2026-02-07T11:41:16.935Z"
+	},
+	{
+		"Id" : 16,
+		"DistrictId" : 4,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 60.5,
+		"CreatedAt" : "2026-02-07T11:41:16.938Z"
+	},
+	{
+		"Id" : 17,
+		"DistrictId" : 4,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 38.6,
+		"CreatedAt" : "2026-02-07T11:41:16.941Z"
+	},
+	{
+		"Id" : 18,
+		"DistrictId" : 4,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.6,
+		"Pm25_2Pm" : 41.2,
+		"CreatedAt" : "2026-02-07T11:41:16.944Z"
+	},
+	{
+		"Id" : 19,
+		"DistrictId" : 4,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 44.9,
+		"CreatedAt" : "2026-02-07T11:41:16.947Z"
+	},
+	{
+		"Id" : 20,
+		"DistrictId" : 4,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.4,
+		"Pm25_2Pm" : 37.1,
+		"CreatedAt" : "2026-02-07T11:41:16.950Z"
+	},
+	{
+		"Id" : 21,
+		"DistrictId" : 5,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.2,
+		"Pm25_2Pm" : 64.3,
+		"CreatedAt" : "2026-02-07T11:41:16.952Z"
+	},
+	{
+		"Id" : 22,
+		"DistrictId" : 5,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 56.2,
+		"CreatedAt" : "2026-02-07T11:41:16.956Z"
+	},
+	{
+		"Id" : 23,
+		"DistrictId" : 5,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 49.6,
+		"CreatedAt" : "2026-02-07T11:41:16.960Z"
+	},
+	{
+		"Id" : 24,
+		"DistrictId" : 5,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 51.3,
+		"CreatedAt" : "2026-02-07T11:41:16.962Z"
+	},
+	{
+		"Id" : 25,
+		"DistrictId" : 5,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.0,
+		"Pm25_2Pm" : 47.6,
+		"CreatedAt" : "2026-02-07T11:41:16.965Z"
+	},
+	{
+		"Id" : 26,
+		"DistrictId" : 6,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 64.3,
+		"CreatedAt" : "2026-02-07T11:41:16.967Z"
+	},
+	{
+		"Id" : 27,
+		"DistrictId" : 6,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 51.8,
+		"CreatedAt" : "2026-02-07T11:41:16.969Z"
+	},
+	{
+		"Id" : 28,
+		"DistrictId" : 6,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 45.8,
+		"CreatedAt" : "2026-02-07T11:41:16.971Z"
+	},
+	{
+		"Id" : 29,
+		"DistrictId" : 6,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 48.0,
+		"CreatedAt" : "2026-02-07T11:41:16.974Z"
+	},
+	{
+		"Id" : 30,
+		"DistrictId" : 6,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 46.0,
+		"CreatedAt" : "2026-02-07T11:41:16.976Z"
+	},
+	{
+		"Id" : 31,
+		"DistrictId" : 7,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 60.5,
+		"CreatedAt" : "2026-02-07T11:41:16.978Z"
+	},
+	{
+		"Id" : 32,
+		"DistrictId" : 7,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.8,
+		"Pm25_2Pm" : 38.6,
+		"CreatedAt" : "2026-02-07T11:41:16.981Z"
+	},
+	{
+		"Id" : 33,
+		"DistrictId" : 7,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.0,
+		"Pm25_2Pm" : 41.2,
+		"CreatedAt" : "2026-02-07T11:41:16.983Z"
+	},
+	{
+		"Id" : 34,
+		"DistrictId" : 7,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.7,
+		"Pm25_2Pm" : 44.9,
+		"CreatedAt" : "2026-02-07T11:41:16.986Z"
+	},
+	{
+		"Id" : 35,
+		"DistrictId" : 7,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 29.0,
+		"Pm25_2Pm" : 37.1,
+		"CreatedAt" : "2026-02-07T11:41:16.988Z"
+	},
+	{
+		"Id" : 36,
+		"DistrictId" : 8,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.3,
+		"Pm25_2Pm" : 63.1,
+		"CreatedAt" : "2026-02-07T11:41:16.991Z"
+	},
+	{
+		"Id" : 37,
+		"DistrictId" : 8,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.4,
+		"Pm25_2Pm" : 46.1,
+		"CreatedAt" : "2026-02-07T11:41:16.994Z"
+	},
+	{
+		"Id" : 38,
+		"DistrictId" : 8,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.3,
+		"Pm25_2Pm" : 47.6,
+		"CreatedAt" : "2026-02-07T11:41:16.996Z"
+	},
+	{
+		"Id" : 39,
+		"DistrictId" : 8,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 49.7,
+		"CreatedAt" : "2026-02-07T11:41:16.998Z"
+	},
+	{
+		"Id" : 40,
+		"DistrictId" : 8,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 41.2,
+		"CreatedAt" : "2026-02-07T11:41:17.001Z"
+	},
+	{
+		"Id" : 41,
+		"DistrictId" : 9,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 65.7,
+		"CreatedAt" : "2026-02-07T11:41:17.004Z"
+	},
+	{
+		"Id" : 42,
+		"DistrictId" : 9,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 48.3,
+		"CreatedAt" : "2026-02-07T11:41:17.006Z"
+	},
+	{
+		"Id" : 43,
+		"DistrictId" : 9,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 49.5,
+		"CreatedAt" : "2026-02-07T11:41:17.008Z"
+	},
+	{
+		"Id" : 44,
+		"DistrictId" : 9,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 49.6,
+		"CreatedAt" : "2026-02-07T11:41:17.010Z"
+	},
+	{
+		"Id" : 45,
+		"DistrictId" : 9,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 47.5,
+		"CreatedAt" : "2026-02-07T11:41:17.013Z"
+	},
+	{
+		"Id" : 46,
+		"DistrictId" : 10,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.6,
+		"Pm25_2Pm" : 58.4,
+		"CreatedAt" : "2026-02-07T11:41:17.015Z"
+	},
+	{
+		"Id" : 47,
+		"DistrictId" : 10,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 54.8,
+		"CreatedAt" : "2026-02-07T11:41:17.017Z"
+	},
+	{
+		"Id" : 48,
+		"DistrictId" : 10,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.1,
+		"Pm25_2Pm" : 42.3,
+		"CreatedAt" : "2026-02-07T11:41:17.020Z"
+	},
+	{
+		"Id" : 49,
+		"DistrictId" : 10,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 40.3,
+		"CreatedAt" : "2026-02-07T11:41:17.022Z"
+	},
+	{
+		"Id" : 50,
+		"DistrictId" : 10,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 47.5,
+		"CreatedAt" : "2026-02-07T11:41:17.025Z"
+	},
+	{
+		"Id" : 51,
+		"DistrictId" : 11,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 65.7,
+		"CreatedAt" : "2026-02-07T11:41:17.027Z"
+	},
+	{
+		"Id" : 52,
+		"DistrictId" : 11,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 48.3,
+		"CreatedAt" : "2026-02-07T11:41:17.029Z"
+	},
+	{
+		"Id" : 53,
+		"DistrictId" : 11,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 49.5,
+		"CreatedAt" : "2026-02-07T11:41:17.032Z"
+	},
+	{
+		"Id" : 54,
+		"DistrictId" : 11,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 49.6,
+		"CreatedAt" : "2026-02-07T11:41:17.034Z"
+	},
+	{
+		"Id" : 55,
+		"DistrictId" : 11,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 47.5,
+		"CreatedAt" : "2026-02-07T11:41:17.037Z"
+	},
+	{
+		"Id" : 56,
+		"DistrictId" : 12,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 62.4,
+		"CreatedAt" : "2026-02-07T11:41:17.039Z"
+	},
+	{
+		"Id" : 57,
+		"DistrictId" : 12,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 49.1,
+		"CreatedAt" : "2026-02-07T11:41:17.041Z"
+	},
+	{
+		"Id" : 58,
+		"DistrictId" : 12,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.1,
+		"Pm25_2Pm" : 44.7,
+		"CreatedAt" : "2026-02-07T11:41:17.043Z"
+	},
+	{
+		"Id" : 59,
+		"DistrictId" : 12,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 45.6,
+		"CreatedAt" : "2026-02-07T11:41:17.046Z"
+	},
+	{
+		"Id" : 60,
+		"DistrictId" : 12,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 46.3,
+		"CreatedAt" : "2026-02-07T11:41:17.048Z"
+	},
+	{
+		"Id" : 61,
+		"DistrictId" : 13,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 54.2,
+		"CreatedAt" : "2026-02-07T11:41:17.050Z"
+	},
+	{
+		"Id" : 62,
+		"DistrictId" : 13,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.6,
+		"Pm25_2Pm" : 58.3,
+		"CreatedAt" : "2026-02-07T11:41:17.053Z"
+	},
+	{
+		"Id" : 63,
+		"DistrictId" : 13,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.1,
+		"Pm25_2Pm" : 38.4,
+		"CreatedAt" : "2026-02-07T11:41:17.055Z"
+	},
+	{
+		"Id" : 64,
+		"DistrictId" : 13,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.8,
+		"Pm25_2Pm" : 44.9,
+		"CreatedAt" : "2026-02-07T11:41:17.057Z"
+	},
+	{
+		"Id" : 65,
+		"DistrictId" : 13,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.9,
+		"Pm25_2Pm" : 43.5,
+		"CreatedAt" : "2026-02-07T11:41:17.059Z"
+	},
+	{
+		"Id" : 66,
+		"DistrictId" : 14,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 62.9,
+		"CreatedAt" : "2026-02-07T11:41:17.062Z"
+	},
+	{
+		"Id" : 67,
+		"DistrictId" : 14,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 40.0,
+		"CreatedAt" : "2026-02-07T11:41:17.064Z"
+	},
+	{
+		"Id" : 68,
+		"DistrictId" : 14,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 41.8,
+		"CreatedAt" : "2026-02-07T11:41:17.067Z"
+	},
+	{
+		"Id" : 69,
+		"DistrictId" : 14,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 42.4,
+		"CreatedAt" : "2026-02-07T11:41:17.069Z"
+	},
+	{
+		"Id" : 70,
+		"DistrictId" : 14,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.8,
+		"Pm25_2Pm" : 36.7,
+		"CreatedAt" : "2026-02-07T11:41:17.072Z"
+	},
+	{
+		"Id" : 71,
+		"DistrictId" : 15,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 62.4,
+		"CreatedAt" : "2026-02-07T11:41:17.074Z"
+	},
+	{
+		"Id" : 72,
+		"DistrictId" : 15,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 43.0,
+		"CreatedAt" : "2026-02-07T11:41:17.077Z"
+	},
+	{
+		"Id" : 73,
+		"DistrictId" : 15,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 48.8,
+		"CreatedAt" : "2026-02-07T11:41:17.080Z"
+	},
+	{
+		"Id" : 74,
+		"DistrictId" : 15,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 48.9,
+		"CreatedAt" : "2026-02-07T11:41:17.082Z"
+	},
+	{
+		"Id" : 75,
+		"DistrictId" : 15,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.5,
+		"Pm25_2Pm" : 45.6,
+		"CreatedAt" : "2026-02-07T11:41:17.085Z"
+	},
+	{
+		"Id" : 76,
+		"DistrictId" : 16,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.2,
+		"Pm25_2Pm" : 59.8,
+		"CreatedAt" : "2026-02-07T11:41:17.087Z"
+	},
+	{
+		"Id" : 77,
+		"DistrictId" : 16,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 56.0,
+		"CreatedAt" : "2026-02-07T11:41:17.089Z"
+	},
+	{
+		"Id" : 78,
+		"DistrictId" : 16,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 42.5,
+		"CreatedAt" : "2026-02-07T11:41:17.092Z"
+	},
+	{
+		"Id" : 79,
+		"DistrictId" : 16,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 49.1,
+		"CreatedAt" : "2026-02-07T11:41:17.096Z"
+	},
+	{
+		"Id" : 80,
+		"DistrictId" : 16,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.0,
+		"Pm25_2Pm" : 46.8,
+		"CreatedAt" : "2026-02-07T11:41:17.098Z"
+	},
+	{
+		"Id" : 81,
+		"DistrictId" : 17,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 23.8,
+		"Pm25_2Pm" : 61.2,
+		"CreatedAt" : "2026-02-07T11:41:17.100Z"
+	},
+	{
+		"Id" : 82,
+		"DistrictId" : 17,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.0,
+		"Pm25_2Pm" : 49.7,
+		"CreatedAt" : "2026-02-07T11:41:17.103Z"
+	},
+	{
+		"Id" : 83,
+		"DistrictId" : 17,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.3,
+		"Pm25_2Pm" : 49.5,
+		"CreatedAt" : "2026-02-07T11:41:17.105Z"
+	},
+	{
+		"Id" : 84,
+		"DistrictId" : 17,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.8,
+		"Pm25_2Pm" : 48.0,
+		"CreatedAt" : "2026-02-07T11:41:17.108Z"
+	},
+	{
+		"Id" : 85,
+		"DistrictId" : 17,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.6,
+		"Pm25_2Pm" : 41.9,
+		"CreatedAt" : "2026-02-07T11:41:17.110Z"
+	},
+	{
+		"Id" : 86,
+		"DistrictId" : 18,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.9,
+		"Pm25_2Pm" : 62.2,
+		"CreatedAt" : "2026-02-07T11:41:17.112Z"
+	},
+	{
+		"Id" : 87,
+		"DistrictId" : 18,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 47.4,
+		"CreatedAt" : "2026-02-07T11:41:17.115Z"
+	},
+	{
+		"Id" : 88,
+		"DistrictId" : 18,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 50.1,
+		"CreatedAt" : "2026-02-07T11:41:17.117Z"
+	},
+	{
+		"Id" : 89,
+		"DistrictId" : 18,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 45.4,
+		"CreatedAt" : "2026-02-07T11:41:17.119Z"
+	},
+	{
+		"Id" : 90,
+		"DistrictId" : 18,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.0,
+		"Pm25_2Pm" : 43.2,
+		"CreatedAt" : "2026-02-07T11:41:17.121Z"
+	},
+	{
+		"Id" : 91,
+		"DistrictId" : 19,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.8,
+		"Pm25_2Pm" : 63.3,
+		"CreatedAt" : "2026-02-07T11:41:17.123Z"
+	},
+	{
+		"Id" : 92,
+		"DistrictId" : 19,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 48.0,
+		"CreatedAt" : "2026-02-07T11:41:17.126Z"
+	},
+	{
+		"Id" : 93,
+		"DistrictId" : 19,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 47.1,
+		"CreatedAt" : "2026-02-07T11:41:17.128Z"
+	},
+	{
+		"Id" : 94,
+		"DistrictId" : 19,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.1,
+		"Pm25_2Pm" : 45.6,
+		"CreatedAt" : "2026-02-07T11:41:17.131Z"
+	},
+	{
+		"Id" : 95,
+		"DistrictId" : 19,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.0,
+		"Pm25_2Pm" : 42.5,
+		"CreatedAt" : "2026-02-07T11:41:17.134Z"
+	},
+	{
+		"Id" : 96,
+		"DistrictId" : 20,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 57.3,
+		"CreatedAt" : "2026-02-07T11:41:17.136Z"
+	},
+	{
+		"Id" : 97,
+		"DistrictId" : 20,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.9,
+		"Pm25_2Pm" : 42.7,
+		"CreatedAt" : "2026-02-07T11:41:17.139Z"
+	},
+	{
+		"Id" : 98,
+		"DistrictId" : 20,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 49.8,
+		"CreatedAt" : "2026-02-07T11:41:17.142Z"
+	},
+	{
+		"Id" : 99,
+		"DistrictId" : 20,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 37.7,
+		"CreatedAt" : "2026-02-07T11:41:17.145Z"
+	},
+	{
+		"Id" : 100,
+		"DistrictId" : 20,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.7,
+		"Pm25_2Pm" : 42.1,
+		"CreatedAt" : "2026-02-07T11:41:17.147Z"
+	},
+	{
+		"Id" : 101,
+		"DistrictId" : 21,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 62.9,
+		"CreatedAt" : "2026-02-07T11:41:17.150Z"
+	},
+	{
+		"Id" : 102,
+		"DistrictId" : 21,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 43.7,
+		"CreatedAt" : "2026-02-07T11:41:17.152Z"
+	},
+	{
+		"Id" : 103,
+		"DistrictId" : 21,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.1,
+		"Pm25_2Pm" : 50.4,
+		"CreatedAt" : "2026-02-07T11:41:17.155Z"
+	},
+	{
+		"Id" : 104,
+		"DistrictId" : 21,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 44.1,
+		"CreatedAt" : "2026-02-07T11:41:17.157Z"
+	},
+	{
+		"Id" : 105,
+		"DistrictId" : 21,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.9,
+		"Pm25_2Pm" : 42.3,
+		"CreatedAt" : "2026-02-07T11:41:17.159Z"
+	},
+	{
+		"Id" : 106,
+		"DistrictId" : 22,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 23.6,
+		"Pm25_2Pm" : 52.6,
+		"CreatedAt" : "2026-02-07T11:41:17.162Z"
+	},
+	{
+		"Id" : 107,
+		"DistrictId" : 22,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.0,
+		"Pm25_2Pm" : 38.5,
+		"CreatedAt" : "2026-02-07T11:41:17.165Z"
+	},
+	{
+		"Id" : 108,
+		"DistrictId" : 22,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 47.7,
+		"CreatedAt" : "2026-02-07T11:41:17.167Z"
+	},
+	{
+		"Id" : 109,
+		"DistrictId" : 22,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 32.0,
+		"CreatedAt" : "2026-02-07T11:41:17.170Z"
+	},
+	{
+		"Id" : 110,
+		"DistrictId" : 22,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 41.7,
+		"CreatedAt" : "2026-02-07T11:41:17.176Z"
+	},
+	{
+		"Id" : 111,
+		"DistrictId" : 23,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 61.5,
+		"CreatedAt" : "2026-02-07T11:41:17.179Z"
+	},
+	{
+		"Id" : 112,
+		"DistrictId" : 23,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.9,
+		"Pm25_2Pm" : 40.3,
+		"CreatedAt" : "2026-02-07T11:41:17.181Z"
+	},
+	{
+		"Id" : 113,
+		"DistrictId" : 23,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 46.1,
+		"CreatedAt" : "2026-02-07T11:41:17.184Z"
+	},
+	{
+		"Id" : 114,
+		"DistrictId" : 23,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 38.1,
+		"CreatedAt" : "2026-02-07T11:41:17.186Z"
+	},
+	{
+		"Id" : 115,
+		"DistrictId" : 23,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.6,
+		"Pm25_2Pm" : 39.7,
+		"CreatedAt" : "2026-02-07T11:41:17.188Z"
+	},
+	{
+		"Id" : 116,
+		"DistrictId" : 24,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 23.8,
+		"Pm25_2Pm" : 57.5,
+		"CreatedAt" : "2026-02-07T11:41:17.191Z"
+	},
+	{
+		"Id" : 117,
+		"DistrictId" : 24,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.2,
+		"Pm25_2Pm" : 40.2,
+		"CreatedAt" : "2026-02-07T11:41:17.194Z"
+	},
+	{
+		"Id" : 118,
+		"DistrictId" : 24,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.2,
+		"Pm25_2Pm" : 48.7,
+		"CreatedAt" : "2026-02-07T11:41:17.196Z"
+	},
+	{
+		"Id" : 119,
+		"DistrictId" : 24,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 34.6,
+		"CreatedAt" : "2026-02-07T11:41:17.198Z"
+	},
+	{
+		"Id" : 120,
+		"DistrictId" : 24,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.8,
+		"Pm25_2Pm" : 41.8,
+		"CreatedAt" : "2026-02-07T11:41:17.201Z"
+	},
+	{
+		"Id" : 121,
+		"DistrictId" : 25,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.0,
+		"Pm25_2Pm" : 62.2,
+		"CreatedAt" : "2026-02-07T11:41:17.203Z"
+	},
+	{
+		"Id" : 122,
+		"DistrictId" : 25,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.2,
+		"Pm25_2Pm" : 48.0,
+		"CreatedAt" : "2026-02-07T11:41:17.205Z"
+	},
+	{
+		"Id" : 123,
+		"DistrictId" : 25,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.7,
+		"Pm25_2Pm" : 50.9,
+		"CreatedAt" : "2026-02-07T11:41:17.208Z"
+	},
+	{
+		"Id" : 124,
+		"DistrictId" : 25,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.1,
+		"Pm25_2Pm" : 49.4,
+		"CreatedAt" : "2026-02-07T11:41:17.210Z"
+	},
+	{
+		"Id" : 125,
+		"DistrictId" : 25,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 42.7,
+		"CreatedAt" : "2026-02-07T11:41:17.212Z"
+	},
+	{
+		"Id" : 126,
+		"DistrictId" : 26,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 23.6,
+		"Pm25_2Pm" : 59.1,
+		"CreatedAt" : "2026-02-07T11:41:17.215Z"
+	},
+	{
+		"Id" : 127,
+		"DistrictId" : 26,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.1,
+		"Pm25_2Pm" : 52.5,
+		"CreatedAt" : "2026-02-07T11:41:17.219Z"
+	},
+	{
+		"Id" : 128,
+		"DistrictId" : 26,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 45.8,
+		"CreatedAt" : "2026-02-07T11:41:17.221Z"
+	},
+	{
+		"Id" : 129,
+		"DistrictId" : 26,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 45.6,
+		"CreatedAt" : "2026-02-07T11:41:17.224Z"
+	},
+	{
+		"Id" : 130,
+		"DistrictId" : 26,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 45.9,
+		"CreatedAt" : "2026-02-07T11:41:17.226Z"
+	},
+	{
+		"Id" : 131,
+		"DistrictId" : 27,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 23.9,
+		"Pm25_2Pm" : 57.2,
+		"CreatedAt" : "2026-02-07T11:41:17.228Z"
+	},
+	{
+		"Id" : 132,
+		"DistrictId" : 27,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.3,
+		"Pm25_2Pm" : 48.4,
+		"CreatedAt" : "2026-02-07T11:41:17.230Z"
+	},
+	{
+		"Id" : 133,
+		"DistrictId" : 27,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.8,
+		"Pm25_2Pm" : 47.5,
+		"CreatedAt" : "2026-02-07T11:41:17.233Z"
+	},
+	{
+		"Id" : 134,
+		"DistrictId" : 27,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 50.2,
+		"CreatedAt" : "2026-02-07T11:41:17.236Z"
+	},
+	{
+		"Id" : 135,
+		"DistrictId" : 27,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.8,
+		"Pm25_2Pm" : 45.2,
+		"CreatedAt" : "2026-02-07T11:41:17.239Z"
+	},
+	{
+		"Id" : 136,
+		"DistrictId" : 28,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.2,
+		"Pm25_2Pm" : 56.9,
+		"CreatedAt" : "2026-02-07T11:41:17.241Z"
+	},
+	{
+		"Id" : 137,
+		"DistrictId" : 28,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.3,
+		"Pm25_2Pm" : 50.5,
+		"CreatedAt" : "2026-02-07T11:41:17.243Z"
+	},
+	{
+		"Id" : 138,
+		"DistrictId" : 28,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.3,
+		"Pm25_2Pm" : 36.1,
+		"CreatedAt" : "2026-02-07T11:41:17.245Z"
+	},
+	{
+		"Id" : 139,
+		"DistrictId" : 28,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.7,
+		"Pm25_2Pm" : 43.4,
+		"CreatedAt" : "2026-02-07T11:41:17.248Z"
+	},
+	{
+		"Id" : 140,
+		"DistrictId" : 28,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 38.5,
+		"CreatedAt" : "2026-02-07T11:41:17.256Z"
+	},
+	{
+		"Id" : 141,
+		"DistrictId" : 29,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 59.6,
+		"CreatedAt" : "2026-02-07T11:41:17.258Z"
+	},
+	{
+		"Id" : 142,
+		"DistrictId" : 29,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 54.5,
+		"CreatedAt" : "2026-02-07T11:41:17.261Z"
+	},
+	{
+		"Id" : 143,
+		"DistrictId" : 29,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 40.3,
+		"CreatedAt" : "2026-02-07T11:41:17.264Z"
+	},
+	{
+		"Id" : 144,
+		"DistrictId" : 29,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.6,
+		"Pm25_2Pm" : 49.7,
+		"CreatedAt" : "2026-02-07T11:41:17.266Z"
+	},
+	{
+		"Id" : 145,
+		"DistrictId" : 29,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.7,
+		"Pm25_2Pm" : 45.5,
+		"CreatedAt" : "2026-02-07T11:41:17.268Z"
+	},
+	{
+		"Id" : 146,
+		"DistrictId" : 30,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.6,
+		"Pm25_2Pm" : 59.3,
+		"CreatedAt" : "2026-02-07T11:41:17.270Z"
+	},
+	{
+		"Id" : 147,
+		"DistrictId" : 30,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 52.6,
+		"CreatedAt" : "2026-02-07T11:41:17.272Z"
+	},
+	{
+		"Id" : 148,
+		"DistrictId" : 30,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 44.6,
+		"CreatedAt" : "2026-02-07T11:41:17.274Z"
+	},
+	{
+		"Id" : 149,
+		"DistrictId" : 30,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 44.8,
+		"CreatedAt" : "2026-02-07T11:41:17.276Z"
+	},
+	{
+		"Id" : 150,
+		"DistrictId" : 30,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.7,
+		"Pm25_2Pm" : 42.7,
+		"CreatedAt" : "2026-02-07T11:41:17.279Z"
+	},
+	{
+		"Id" : 151,
+		"DistrictId" : 31,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.5,
+		"Pm25_2Pm" : 54.2,
+		"CreatedAt" : "2026-02-07T11:41:17.281Z"
+	},
+	{
+		"Id" : 152,
+		"DistrictId" : 31,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.1,
+		"Pm25_2Pm" : 52.5,
+		"CreatedAt" : "2026-02-07T11:41:17.283Z"
+	},
+	{
+		"Id" : 153,
+		"DistrictId" : 31,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 47.8,
+		"CreatedAt" : "2026-02-07T11:41:17.285Z"
+	},
+	{
+		"Id" : 154,
+		"DistrictId" : 31,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.8,
+		"Pm25_2Pm" : 46.6,
+		"CreatedAt" : "2026-02-07T11:41:17.288Z"
+	},
+	{
+		"Id" : 155,
+		"DistrictId" : 31,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 42.1,
+		"CreatedAt" : "2026-02-07T11:41:17.290Z"
+	},
+	{
+		"Id" : 156,
+		"DistrictId" : 32,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 61.9,
+		"CreatedAt" : "2026-02-07T11:41:17.292Z"
+	},
+	{
+		"Id" : 157,
+		"DistrictId" : 32,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 53.0,
+		"CreatedAt" : "2026-02-07T11:41:17.294Z"
+	},
+	{
+		"Id" : 158,
+		"DistrictId" : 32,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.6,
+		"Pm25_2Pm" : 42.8,
+		"CreatedAt" : "2026-02-07T11:41:17.296Z"
+	},
+	{
+		"Id" : 159,
+		"DistrictId" : 32,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 47.6,
+		"CreatedAt" : "2026-02-07T11:41:17.298Z"
+	},
+	{
+		"Id" : 160,
+		"DistrictId" : 32,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.2,
+		"Pm25_2Pm" : 45.1,
+		"CreatedAt" : "2026-02-07T11:41:17.301Z"
+	},
+	{
+		"Id" : 161,
+		"DistrictId" : 33,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.2,
+		"Pm25_2Pm" : 55.4,
+		"CreatedAt" : "2026-02-07T11:41:17.303Z"
+	},
+	{
+		"Id" : 162,
+		"DistrictId" : 33,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.9,
+		"Pm25_2Pm" : 50.9,
+		"CreatedAt" : "2026-02-07T11:41:17.305Z"
+	},
+	{
+		"Id" : 163,
+		"DistrictId" : 33,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 50.6,
+		"CreatedAt" : "2026-02-07T11:41:17.307Z"
+	},
+	{
+		"Id" : 164,
+		"DistrictId" : 33,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 45.3,
+		"CreatedAt" : "2026-02-07T11:41:17.310Z"
+	},
+	{
+		"Id" : 165,
+		"DistrictId" : 33,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 44.4,
+		"CreatedAt" : "2026-02-07T11:41:17.313Z"
+	},
+	{
+		"Id" : 166,
+		"DistrictId" : 34,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 50.5,
+		"CreatedAt" : "2026-02-07T11:41:17.315Z"
+	},
+	{
+		"Id" : 167,
+		"DistrictId" : 34,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 33.8,
+		"CreatedAt" : "2026-02-07T11:41:17.317Z"
+	},
+	{
+		"Id" : 168,
+		"DistrictId" : 34,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 34.7,
+		"CreatedAt" : "2026-02-07T11:41:17.321Z"
+	},
+	{
+		"Id" : 169,
+		"DistrictId" : 34,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.1,
+		"Pm25_2Pm" : 34.3,
+		"CreatedAt" : "2026-02-07T11:41:17.323Z"
+	},
+	{
+		"Id" : 170,
+		"DistrictId" : 34,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.1,
+		"Pm25_2Pm" : 24.2,
+		"CreatedAt" : "2026-02-07T11:41:17.325Z"
+	},
+	{
+		"Id" : 171,
+		"DistrictId" : 35,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 58.4,
+		"CreatedAt" : "2026-02-07T11:41:17.327Z"
+	},
+	{
+		"Id" : 172,
+		"DistrictId" : 35,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.6,
+		"Pm25_2Pm" : 38.6,
+		"CreatedAt" : "2026-02-07T11:41:17.329Z"
+	},
+	{
+		"Id" : 173,
+		"DistrictId" : 35,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.0,
+		"Pm25_2Pm" : 46.3,
+		"CreatedAt" : "2026-02-07T11:41:17.331Z"
+	},
+	{
+		"Id" : 174,
+		"DistrictId" : 35,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 46.6,
+		"CreatedAt" : "2026-02-07T11:41:17.334Z"
+	},
+	{
+		"Id" : 175,
+		"DistrictId" : 35,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.7,
+		"Pm25_2Pm" : 42.0,
+		"CreatedAt" : "2026-02-07T11:41:17.336Z"
+	},
+	{
+		"Id" : 176,
+		"DistrictId" : 36,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 56.7,
+		"CreatedAt" : "2026-02-07T11:41:17.338Z"
+	},
+	{
+		"Id" : 177,
+		"DistrictId" : 36,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.6,
+		"Pm25_2Pm" : 39.3,
+		"CreatedAt" : "2026-02-07T11:41:17.341Z"
+	},
+	{
+		"Id" : 178,
+		"DistrictId" : 36,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 43.9,
+		"CreatedAt" : "2026-02-07T11:41:17.343Z"
+	},
+	{
+		"Id" : 179,
+		"DistrictId" : 36,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 44.4,
+		"CreatedAt" : "2026-02-07T11:41:17.346Z"
+	},
+	{
+		"Id" : 180,
+		"DistrictId" : 36,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.4,
+		"Pm25_2Pm" : 41.7,
+		"CreatedAt" : "2026-02-07T11:41:17.348Z"
+	},
+	{
+		"Id" : 181,
+		"DistrictId" : 37,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.0,
+		"Pm25_2Pm" : 58.1,
+		"CreatedAt" : "2026-02-07T11:41:17.350Z"
+	},
+	{
+		"Id" : 182,
+		"DistrictId" : 37,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.2,
+		"Pm25_2Pm" : 36.2,
+		"CreatedAt" : "2026-02-07T11:41:17.352Z"
+	},
+	{
+		"Id" : 183,
+		"DistrictId" : 37,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 39.6,
+		"CreatedAt" : "2026-02-07T11:41:17.355Z"
+	},
+	{
+		"Id" : 184,
+		"DistrictId" : 37,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 41.7,
+		"CreatedAt" : "2026-02-07T11:41:17.357Z"
+	},
+	{
+		"Id" : 185,
+		"DistrictId" : 37,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 32.2,
+		"CreatedAt" : "2026-02-07T11:41:17.360Z"
+	},
+	{
+		"Id" : 186,
+		"DistrictId" : 38,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.2,
+		"Pm25_2Pm" : 54.7,
+		"CreatedAt" : "2026-02-07T11:41:17.362Z"
+	},
+	{
+		"Id" : 187,
+		"DistrictId" : 38,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 36.7,
+		"CreatedAt" : "2026-02-07T11:41:17.364Z"
+	},
+	{
+		"Id" : 188,
+		"DistrictId" : 38,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.6,
+		"Pm25_2Pm" : 43.4,
+		"CreatedAt" : "2026-02-07T11:41:17.366Z"
+	},
+	{
+		"Id" : 189,
+		"DistrictId" : 38,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.1,
+		"Pm25_2Pm" : 44.0,
+		"CreatedAt" : "2026-02-07T11:41:17.368Z"
+	},
+	{
+		"Id" : 190,
+		"DistrictId" : 38,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 39.0,
+		"CreatedAt" : "2026-02-07T11:41:17.371Z"
+	},
+	{
+		"Id" : 191,
+		"DistrictId" : 39,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 55.6,
+		"CreatedAt" : "2026-02-07T11:41:17.373Z"
+	},
+	{
+		"Id" : 192,
+		"DistrictId" : 39,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 35.9,
+		"CreatedAt" : "2026-02-07T11:41:17.375Z"
+	},
+	{
+		"Id" : 193,
+		"DistrictId" : 39,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 38.1,
+		"CreatedAt" : "2026-02-07T11:41:17.377Z"
+	},
+	{
+		"Id" : 194,
+		"DistrictId" : 39,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.6,
+		"Pm25_2Pm" : 39.1,
+		"CreatedAt" : "2026-02-07T11:41:17.380Z"
+	},
+	{
+		"Id" : 195,
+		"DistrictId" : 39,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.7,
+		"Pm25_2Pm" : 28.8,
+		"CreatedAt" : "2026-02-07T11:41:17.383Z"
+	},
+	{
+		"Id" : 196,
+		"DistrictId" : 40,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 30.9,
+		"Pm25_2Pm" : 28.2,
+		"CreatedAt" : "2026-02-07T11:41:17.386Z"
+	},
+	{
+		"Id" : 197,
+		"DistrictId" : 40,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 31.3,
+		"Pm25_2Pm" : 35.7,
+		"CreatedAt" : "2026-02-07T11:41:17.389Z"
+	},
+	{
+		"Id" : 198,
+		"DistrictId" : 40,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 31.3,
+		"Pm25_2Pm" : 25.4,
+		"CreatedAt" : "2026-02-07T11:41:17.392Z"
+	},
+	{
+		"Id" : 199,
+		"DistrictId" : 40,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 29.4,
+		"Pm25_2Pm" : 21.7,
+		"CreatedAt" : "2026-02-07T11:41:17.394Z"
+	},
+	{
+		"Id" : 200,
+		"DistrictId" : 40,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 31.2,
+		"Pm25_2Pm" : 18.0,
+		"CreatedAt" : "2026-02-07T11:41:17.396Z"
+	},
+	{
+		"Id" : 201,
+		"DistrictId" : 41,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.2,
+		"Pm25_2Pm" : 61.5,
+		"CreatedAt" : "2026-02-07T11:41:17.398Z"
+	},
+	{
+		"Id" : 202,
+		"DistrictId" : 41,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.3,
+		"Pm25_2Pm" : 51.1,
+		"CreatedAt" : "2026-02-07T11:41:17.400Z"
+	},
+	{
+		"Id" : 203,
+		"DistrictId" : 41,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.6,
+		"Pm25_2Pm" : 46.0,
+		"CreatedAt" : "2026-02-07T11:41:17.403Z"
+	},
+	{
+		"Id" : 204,
+		"DistrictId" : 41,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 45.9,
+		"CreatedAt" : "2026-02-07T11:41:17.405Z"
+	},
+	{
+		"Id" : 205,
+		"DistrictId" : 41,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.4,
+		"Pm25_2Pm" : 43.4,
+		"CreatedAt" : "2026-02-07T11:41:17.408Z"
+	},
+	{
+		"Id" : 206,
+		"DistrictId" : 42,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.3,
+		"Pm25_2Pm" : 63.1,
+		"CreatedAt" : "2026-02-07T11:41:17.410Z"
+	},
+	{
+		"Id" : 207,
+		"DistrictId" : 42,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.6,
+		"Pm25_2Pm" : 44.8,
+		"CreatedAt" : "2026-02-07T11:41:17.413Z"
+	},
+	{
+		"Id" : 208,
+		"DistrictId" : 42,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 46.7,
+		"CreatedAt" : "2026-02-07T11:41:17.415Z"
+	},
+	{
+		"Id" : 209,
+		"DistrictId" : 42,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.7,
+		"Pm25_2Pm" : 47.1,
+		"CreatedAt" : "2026-02-07T11:41:17.417Z"
+	},
+	{
+		"Id" : 210,
+		"DistrictId" : 42,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.6,
+		"Pm25_2Pm" : 45.4,
+		"CreatedAt" : "2026-02-07T11:41:17.419Z"
+	},
+	{
+		"Id" : 211,
+		"DistrictId" : 43,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 22.9,
+		"Pm25_2Pm" : 42.1,
+		"CreatedAt" : "2026-02-07T11:41:17.421Z"
+	},
+	{
+		"Id" : 212,
+		"DistrictId" : 43,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 22.7,
+		"Pm25_2Pm" : 42.5,
+		"CreatedAt" : "2026-02-07T11:41:17.423Z"
+	},
+	{
+		"Id" : 213,
+		"DistrictId" : 43,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 23.4,
+		"Pm25_2Pm" : 33.3,
+		"CreatedAt" : "2026-02-07T11:41:17.425Z"
+	},
+	{
+		"Id" : 214,
+		"DistrictId" : 43,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 23.3,
+		"Pm25_2Pm" : 31.8,
+		"CreatedAt" : "2026-02-07T11:41:17.427Z"
+	},
+	{
+		"Id" : 215,
+		"DistrictId" : 43,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 23.9,
+		"Pm25_2Pm" : 26.4,
+		"CreatedAt" : "2026-02-07T11:41:17.430Z"
+	},
+	{
+		"Id" : 216,
+		"DistrictId" : 44,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.3,
+		"Pm25_2Pm" : 63.8,
+		"CreatedAt" : "2026-02-07T11:41:17.432Z"
+	},
+	{
+		"Id" : 217,
+		"DistrictId" : 44,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 49.7,
+		"CreatedAt" : "2026-02-07T11:41:17.435Z"
+	},
+	{
+		"Id" : 218,
+		"DistrictId" : 44,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 45.1,
+		"CreatedAt" : "2026-02-07T11:41:17.437Z"
+	},
+	{
+		"Id" : 219,
+		"DistrictId" : 44,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 45.9,
+		"CreatedAt" : "2026-02-07T11:41:17.439Z"
+	},
+	{
+		"Id" : 220,
+		"DistrictId" : 44,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.5,
+		"Pm25_2Pm" : 43.0,
+		"CreatedAt" : "2026-02-07T11:41:17.442Z"
+	},
+	{
+		"Id" : 221,
+		"DistrictId" : 45,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 59.0,
+		"CreatedAt" : "2026-02-07T11:41:17.444Z"
+	},
+	{
+		"Id" : 222,
+		"DistrictId" : 45,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.8,
+		"Pm25_2Pm" : 58.2,
+		"CreatedAt" : "2026-02-07T11:41:17.446Z"
+	},
+	{
+		"Id" : 223,
+		"DistrictId" : 45,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 24.5,
+		"Pm25_2Pm" : 47.1,
+		"CreatedAt" : "2026-02-07T11:41:17.448Z"
+	},
+	{
+		"Id" : 224,
+		"DistrictId" : 45,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 24.7,
+		"Pm25_2Pm" : 47.1,
+		"CreatedAt" : "2026-02-07T11:41:17.452Z"
+	},
+	{
+		"Id" : 225,
+		"DistrictId" : 45,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 42.1,
+		"CreatedAt" : "2026-02-07T11:41:17.454Z"
+	},
+	{
+		"Id" : 226,
+		"DistrictId" : 46,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 63.3,
+		"CreatedAt" : "2026-02-07T11:41:17.456Z"
+	},
+	{
+		"Id" : 227,
+		"DistrictId" : 46,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 47.3,
+		"CreatedAt" : "2026-02-07T11:41:17.458Z"
+	},
+	{
+		"Id" : 228,
+		"DistrictId" : 46,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.4,
+		"Pm25_2Pm" : 43.7,
+		"CreatedAt" : "2026-02-07T11:41:17.460Z"
+	},
+	{
+		"Id" : 229,
+		"DistrictId" : 46,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 43.2,
+		"CreatedAt" : "2026-02-07T11:41:17.462Z"
+	},
+	{
+		"Id" : 230,
+		"DistrictId" : 46,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.3,
+		"Pm25_2Pm" : 41.1,
+		"CreatedAt" : "2026-02-07T11:41:17.465Z"
+	},
+	{
+		"Id" : 231,
+		"DistrictId" : 47,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 29.7,
+		"Pm25_2Pm" : 43.9,
+		"CreatedAt" : "2026-02-07T11:41:17.467Z"
+	},
+	{
+		"Id" : 232,
+		"DistrictId" : 47,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 30.7,
+		"Pm25_2Pm" : 44.1,
+		"CreatedAt" : "2026-02-07T11:41:17.469Z"
+	},
+	{
+		"Id" : 233,
+		"DistrictId" : 47,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 33.0,
+		"Pm25_2Pm" : 30.4,
+		"CreatedAt" : "2026-02-07T11:41:17.472Z"
+	},
+	{
+		"Id" : 234,
+		"DistrictId" : 47,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 31.8,
+		"Pm25_2Pm" : 27.9,
+		"CreatedAt" : "2026-02-07T11:41:17.474Z"
+	},
+	{
+		"Id" : 235,
+		"DistrictId" : 47,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 32.3,
+		"Pm25_2Pm" : 25.3,
+		"CreatedAt" : "2026-02-07T11:41:17.476Z"
+	},
+	{
+		"Id" : 236,
+		"DistrictId" : 48,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 24.8,
+		"Pm25_2Pm" : 56.7,
+		"CreatedAt" : "2026-02-07T11:41:17.479Z"
+	},
+	{
+		"Id" : 237,
+		"DistrictId" : 48,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.8,
+		"Pm25_2Pm" : 39.3,
+		"CreatedAt" : "2026-02-07T11:41:17.481Z"
+	},
+	{
+		"Id" : 238,
+		"DistrictId" : 48,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 43.9,
+		"CreatedAt" : "2026-02-07T11:41:17.483Z"
+	},
+	{
+		"Id" : 239,
+		"DistrictId" : 48,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.7,
+		"Pm25_2Pm" : 44.4,
+		"CreatedAt" : "2026-02-07T11:41:17.485Z"
+	},
+	{
+		"Id" : 240,
+		"DistrictId" : 48,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 41.7,
+		"CreatedAt" : "2026-02-07T11:41:17.488Z"
+	},
+	{
+		"Id" : 241,
+		"DistrictId" : 49,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 58.9,
+		"CreatedAt" : "2026-02-07T11:41:17.490Z"
+	},
+	{
+		"Id" : 242,
+		"DistrictId" : 49,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 27.1,
+		"Pm25_2Pm" : 42.1,
+		"CreatedAt" : "2026-02-07T11:41:17.492Z"
+	},
+	{
+		"Id" : 243,
+		"DistrictId" : 49,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.5,
+		"Pm25_2Pm" : 40.3,
+		"CreatedAt" : "2026-02-07T11:41:17.494Z"
+	},
+	{
+		"Id" : 244,
+		"DistrictId" : 49,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 40.0,
+		"CreatedAt" : "2026-02-07T11:41:17.496Z"
+	},
+	{
+		"Id" : 245,
+		"DistrictId" : 49,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.7,
+		"Pm25_2Pm" : 38.3,
+		"CreatedAt" : "2026-02-07T11:41:17.499Z"
+	},
+	{
+		"Id" : 246,
+		"DistrictId" : 50,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 27.9,
+		"Pm25_2Pm" : 27.2,
+		"CreatedAt" : "2026-02-07T11:41:17.501Z"
+	},
+	{
+		"Id" : 247,
+		"DistrictId" : 50,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 28.5,
+		"Pm25_2Pm" : 34.0,
+		"CreatedAt" : "2026-02-07T11:41:17.504Z"
+	},
+	{
+		"Id" : 248,
+		"DistrictId" : 50,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 30.0,
+		"Pm25_2Pm" : 24.8,
+		"CreatedAt" : "2026-02-07T11:41:17.507Z"
+	},
+	{
+		"Id" : 249,
+		"DistrictId" : 50,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 29.1,
+		"Pm25_2Pm" : 20.5,
+		"CreatedAt" : "2026-02-07T11:41:17.510Z"
+	},
+	{
+		"Id" : 250,
+		"DistrictId" : 50,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 29.6,
+		"Pm25_2Pm" : 18.6,
+		"CreatedAt" : "2026-02-07T11:41:17.512Z"
+	},
+	{
+		"Id" : 251,
+		"DistrictId" : 51,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 58.6,
+		"CreatedAt" : "2026-02-07T11:41:17.515Z"
+	},
+	{
+		"Id" : 252,
+		"DistrictId" : 51,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.6,
+		"Pm25_2Pm" : 53.6,
+		"CreatedAt" : "2026-02-07T11:41:17.517Z"
+	},
+	{
+		"Id" : 253,
+		"DistrictId" : 51,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.1,
+		"Pm25_2Pm" : 38.6,
+		"CreatedAt" : "2026-02-07T11:41:17.519Z"
+	},
+	{
+		"Id" : 254,
+		"DistrictId" : 51,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.8,
+		"Pm25_2Pm" : 38.9,
+		"CreatedAt" : "2026-02-07T11:41:17.522Z"
+	},
+	{
+		"Id" : 255,
+		"DistrictId" : 51,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.6,
+		"Pm25_2Pm" : 35.7,
+		"CreatedAt" : "2026-02-07T11:41:17.525Z"
+	},
+	{
+		"Id" : 256,
+		"DistrictId" : 52,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 58.6,
+		"CreatedAt" : "2026-02-07T11:41:17.527Z"
+	},
+	{
+		"Id" : 257,
+		"DistrictId" : 52,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 53.6,
+		"CreatedAt" : "2026-02-07T11:41:17.529Z"
+	},
+	{
+		"Id" : 258,
+		"DistrictId" : 52,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.1,
+		"Pm25_2Pm" : 38.6,
+		"CreatedAt" : "2026-02-07T11:41:17.532Z"
+	},
+	{
+		"Id" : 259,
+		"DistrictId" : 52,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 38.9,
+		"CreatedAt" : "2026-02-07T11:41:17.534Z"
+	},
+	{
+		"Id" : 260,
+		"DistrictId" : 52,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.5,
+		"Pm25_2Pm" : 35.7,
+		"CreatedAt" : "2026-02-07T11:41:17.536Z"
+	},
+	{
+		"Id" : 261,
+		"DistrictId" : 53,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.7,
+		"Pm25_2Pm" : 45.1,
+		"CreatedAt" : "2026-02-07T11:41:17.538Z"
+	},
+	{
+		"Id" : 262,
+		"DistrictId" : 53,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.0,
+		"Pm25_2Pm" : 50.4,
+		"CreatedAt" : "2026-02-07T11:41:17.540Z"
+	},
+	{
+		"Id" : 263,
+		"DistrictId" : 53,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.4,
+		"Pm25_2Pm" : 26.4,
+		"CreatedAt" : "2026-02-07T11:41:17.542Z"
+	},
+	{
+		"Id" : 264,
+		"DistrictId" : 53,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 27.2,
+		"CreatedAt" : "2026-02-07T11:41:17.544Z"
+	},
+	{
+		"Id" : 265,
+		"DistrictId" : 53,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.7,
+		"Pm25_2Pm" : 30.5,
+		"CreatedAt" : "2026-02-07T11:41:17.546Z"
+	},
+	{
+		"Id" : 266,
+		"DistrictId" : 54,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 41.1,
+		"CreatedAt" : "2026-02-07T11:41:17.549Z"
+	},
+	{
+		"Id" : 267,
+		"DistrictId" : 54,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.7,
+		"Pm25_2Pm" : 47.5,
+		"CreatedAt" : "2026-02-07T11:41:17.551Z"
+	},
+	{
+		"Id" : 268,
+		"DistrictId" : 54,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 27.4,
+		"Pm25_2Pm" : 31.9,
+		"CreatedAt" : "2026-02-07T11:41:17.554Z"
+	},
+	{
+		"Id" : 269,
+		"DistrictId" : 54,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.9,
+		"Pm25_2Pm" : 32.1,
+		"CreatedAt" : "2026-02-07T11:41:17.556Z"
+	},
+	{
+		"Id" : 270,
+		"DistrictId" : 54,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 27.4,
+		"Pm25_2Pm" : 36.1,
+		"CreatedAt" : "2026-02-07T11:41:17.558Z"
+	},
+	{
+		"Id" : 271,
+		"DistrictId" : 55,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 58.9,
+		"CreatedAt" : "2026-02-07T11:41:17.560Z"
+	},
+	{
+		"Id" : 272,
+		"DistrictId" : 55,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 34.9,
+		"CreatedAt" : "2026-02-07T11:41:17.563Z"
+	},
+	{
+		"Id" : 273,
+		"DistrictId" : 55,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 36.1,
+		"CreatedAt" : "2026-02-07T11:41:17.565Z"
+	},
+	{
+		"Id" : 274,
+		"DistrictId" : 55,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.3,
+		"Pm25_2Pm" : 37.3,
+		"CreatedAt" : "2026-02-07T11:41:17.567Z"
+	},
+	{
+		"Id" : 275,
+		"DistrictId" : 55,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.5,
+		"Pm25_2Pm" : 30.5,
+		"CreatedAt" : "2026-02-07T11:41:17.569Z"
+	},
+	{
+		"Id" : 276,
+		"DistrictId" : 56,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 56.6,
+		"CreatedAt" : "2026-02-07T11:41:17.572Z"
+	},
+	{
+		"Id" : 277,
+		"DistrictId" : 56,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.6,
+		"Pm25_2Pm" : 36.6,
+		"CreatedAt" : "2026-02-07T11:41:17.574Z"
+	},
+	{
+		"Id" : 278,
+		"DistrictId" : 56,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.1,
+		"Pm25_2Pm" : 43.8,
+		"CreatedAt" : "2026-02-07T11:41:17.577Z"
+	},
+	{
+		"Id" : 279,
+		"DistrictId" : 56,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 38.4,
+		"CreatedAt" : "2026-02-07T11:41:17.579Z"
+	},
+	{
+		"Id" : 280,
+		"DistrictId" : 56,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.2,
+		"Pm25_2Pm" : 40.2,
+		"CreatedAt" : "2026-02-07T11:41:17.581Z"
+	},
+	{
+		"Id" : 281,
+		"DistrictId" : 57,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.6,
+		"Pm25_2Pm" : 59.1,
+		"CreatedAt" : "2026-02-07T11:41:17.584Z"
+	},
+	{
+		"Id" : 282,
+		"DistrictId" : 57,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 35.6,
+		"CreatedAt" : "2026-02-07T11:41:17.586Z"
+	},
+	{
+		"Id" : 283,
+		"DistrictId" : 57,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 40.2,
+		"CreatedAt" : "2026-02-07T11:41:17.588Z"
+	},
+	{
+		"Id" : 284,
+		"DistrictId" : 57,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 36.4,
+		"CreatedAt" : "2026-02-07T11:41:17.590Z"
+	},
+	{
+		"Id" : 285,
+		"DistrictId" : 57,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.4,
+		"Pm25_2Pm" : 35.5,
+		"CreatedAt" : "2026-02-07T11:41:17.593Z"
+	},
+	{
+		"Id" : 286,
+		"DistrictId" : 58,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.6,
+		"Pm25_2Pm" : 61.5,
+		"CreatedAt" : "2026-02-07T11:41:17.595Z"
+	},
+	{
+		"Id" : 287,
+		"DistrictId" : 58,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.9,
+		"Pm25_2Pm" : 36.9,
+		"CreatedAt" : "2026-02-07T11:41:17.597Z"
+	},
+	{
+		"Id" : 288,
+		"DistrictId" : 58,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 42.6,
+		"CreatedAt" : "2026-02-07T11:41:17.600Z"
+	},
+	{
+		"Id" : 289,
+		"DistrictId" : 58,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 35.7,
+		"CreatedAt" : "2026-02-07T11:41:17.602Z"
+	},
+	{
+		"Id" : 290,
+		"DistrictId" : 58,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.4,
+		"Pm25_2Pm" : 36.4,
+		"CreatedAt" : "2026-02-07T11:41:17.604Z"
+	},
+	{
+		"Id" : 291,
+		"DistrictId" : 59,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 58.9,
+		"CreatedAt" : "2026-02-07T11:41:17.606Z"
+	},
+	{
+		"Id" : 292,
+		"DistrictId" : 59,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.7,
+		"Pm25_2Pm" : 34.9,
+		"CreatedAt" : "2026-02-07T11:41:17.608Z"
+	},
+	{
+		"Id" : 293,
+		"DistrictId" : 59,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.8,
+		"Pm25_2Pm" : 36.1,
+		"CreatedAt" : "2026-02-07T11:41:17.610Z"
+	},
+	{
+		"Id" : 294,
+		"DistrictId" : 59,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.4,
+		"Pm25_2Pm" : 37.3,
+		"CreatedAt" : "2026-02-07T11:41:17.612Z"
+	},
+	{
+		"Id" : 295,
+		"DistrictId" : 59,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.8,
+		"Pm25_2Pm" : 30.5,
+		"CreatedAt" : "2026-02-07T11:41:17.614Z"
+	},
+	{
+		"Id" : 296,
+		"DistrictId" : 60,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 23.7,
+		"Pm25_2Pm" : 61.5,
+		"CreatedAt" : "2026-02-07T11:41:17.616Z"
+	},
+	{
+		"Id" : 297,
+		"DistrictId" : 60,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.0,
+		"Pm25_2Pm" : 40.3,
+		"CreatedAt" : "2026-02-07T11:41:17.618Z"
+	},
+	{
+		"Id" : 298,
+		"DistrictId" : 60,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 24.9,
+		"Pm25_2Pm" : 46.1,
+		"CreatedAt" : "2026-02-07T11:41:17.620Z"
+	},
+	{
+		"Id" : 299,
+		"DistrictId" : 60,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.4,
+		"Pm25_2Pm" : 38.1,
+		"CreatedAt" : "2026-02-07T11:41:17.622Z"
+	},
+	{
+		"Id" : 300,
+		"DistrictId" : 60,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 39.7,
+		"CreatedAt" : "2026-02-07T11:41:17.624Z"
+	},
+	{
+		"Id" : 301,
+		"DistrictId" : 61,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.5,
+		"Pm25_2Pm" : 62.9,
+		"CreatedAt" : "2026-02-07T11:41:17.626Z"
+	},
+	{
+		"Id" : 302,
+		"DistrictId" : 61,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 25.8,
+		"Pm25_2Pm" : 40.0,
+		"CreatedAt" : "2026-02-07T11:41:17.629Z"
+	},
+	{
+		"Id" : 303,
+		"DistrictId" : 61,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.4,
+		"Pm25_2Pm" : 41.8,
+		"CreatedAt" : "2026-02-07T11:41:17.632Z"
+	},
+	{
+		"Id" : 304,
+		"DistrictId" : 61,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 42.4,
+		"CreatedAt" : "2026-02-07T11:41:17.634Z"
+	},
+	{
+		"Id" : 305,
+		"DistrictId" : 61,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.4,
+		"Pm25_2Pm" : 36.7,
+		"CreatedAt" : "2026-02-07T11:41:17.637Z"
+	},
+	{
+		"Id" : 306,
+		"DistrictId" : 62,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 23.7,
+		"Pm25_2Pm" : 56.6,
+		"CreatedAt" : "2026-02-07T11:41:17.638Z"
+	},
+	{
+		"Id" : 307,
+		"DistrictId" : 62,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 24.2,
+		"Pm25_2Pm" : 36.6,
+		"CreatedAt" : "2026-02-07T11:41:17.640Z"
+	},
+	{
+		"Id" : 308,
+		"DistrictId" : 62,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 24.5,
+		"Pm25_2Pm" : 43.8,
+		"CreatedAt" : "2026-02-07T11:41:17.642Z"
+	},
+	{
+		"Id" : 309,
+		"DistrictId" : 62,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 25.2,
+		"Pm25_2Pm" : 38.4,
+		"CreatedAt" : "2026-02-07T11:41:17.644Z"
+	},
+	{
+		"Id" : 310,
+		"DistrictId" : 62,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 40.2,
+		"CreatedAt" : "2026-02-07T11:41:17.648Z"
+	},
+	{
+		"Id" : 311,
+		"DistrictId" : 63,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.7,
+		"Pm25_2Pm" : 62.4,
+		"CreatedAt" : "2026-02-07T11:41:17.651Z"
+	},
+	{
+		"Id" : 312,
+		"DistrictId" : 63,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.2,
+		"Pm25_2Pm" : 37.7,
+		"CreatedAt" : "2026-02-07T11:41:17.653Z"
+	},
+	{
+		"Id" : 313,
+		"DistrictId" : 63,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.5,
+		"Pm25_2Pm" : 38.6,
+		"CreatedAt" : "2026-02-07T11:41:17.655Z"
+	},
+	{
+		"Id" : 314,
+		"DistrictId" : 63,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 40.2,
+		"CreatedAt" : "2026-02-07T11:41:17.657Z"
+	},
+	{
+		"Id" : 315,
+		"DistrictId" : 63,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.6,
+		"Pm25_2Pm" : 33.3,
+		"CreatedAt" : "2026-02-07T11:41:17.660Z"
+	},
+	{
+		"Id" : 316,
+		"DistrictId" : 64,
+		"ForecastDate" : "2026-02-07",
+		"Temp2Pm" : 25.8,
+		"Pm25_2Pm" : 55.8,
+		"CreatedAt" : "2026-02-07T11:41:17.662Z"
+	},
+	{
+		"Id" : 317,
+		"DistrictId" : 64,
+		"ForecastDate" : "2026-02-08",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 35.5,
+		"CreatedAt" : "2026-02-07T11:41:17.664Z"
+	},
+	{
+		"Id" : 318,
+		"DistrictId" : 64,
+		"ForecastDate" : "2026-02-09",
+		"Temp2Pm" : 26.3,
+		"Pm25_2Pm" : 37.3,
+		"CreatedAt" : "2026-02-07T11:41:17.666Z"
+	},
+	{
+		"Id" : 319,
+		"DistrictId" : 64,
+		"ForecastDate" : "2026-02-10",
+		"Temp2Pm" : 27.2,
+		"Pm25_2Pm" : 36.3,
+		"CreatedAt" : "2026-02-07T11:41:17.668Z"
+	},
+	{
+		"Id" : 320,
+		"DistrictId" : 64,
+		"ForecastDate" : "2026-02-11",
+		"Temp2Pm" : 28.3,
+		"Pm25_2Pm" : 35.7,
+		"CreatedAt" : "2026-02-07T11:41:17.670Z"
+	}
+]}

@@ -54,11 +54,74 @@ Response:
 {
   "districts": [
     {
-      "districtId": 1,
-      "districtName": "Dhaka",
-      "temp2Pm": 28.5,
-      "pm25_2Pm": 42.1,
+      "districtId": 43,
+      "districtName": "Chattogram",
+      "temp2Pm": 23.24,
+      "pm25_2Pm": 35.22,
       "rank": 1
+    },
+    {
+      "districtId": 22,
+      "districtName": "Nawabganj",
+      "temp2Pm": 24.74,
+      "pm25_2Pm": 42.5,
+      "rank": 2
+    },
+    {
+      "districtId": 62,
+      "districtName": "Meherpur",
+      "temp2Pm": 24.82,
+      "pm25_2Pm": 43.120000000000005,
+      "rank": 3
+    },
+    {
+      "districtId": 45,
+      "districtName": "Cox's Bazar",
+      "temp2Pm": 24.84,
+      "pm25_2Pm": 50.7,
+      "rank": 4
+    },
+    {
+      "districtId": 60,
+      "districtName": "Kushtia",
+      "temp2Pm": 24.9,
+      "pm25_2Pm": 45.14,
+      "rank": 5
+    },
+    {
+      "districtId": 26,
+      "districtName": "Dinajpur",
+      "temp2Pm": 25.040000000000003,
+      "pm25_2Pm": 49.779999999999994,
+      "rank": 6
+    },
+    {
+      "districtId": 24,
+      "districtName": "Rajshahi",
+      "temp2Pm": 25.1,
+      "pm25_2Pm": 44.56,
+      "rank": 7
+    },
+    {
+      "districtId": 17,
+      "districtName": "Tangail",
+      "temp2Pm": 25.1,
+      "pm25_2Pm": 50.06,
+      "rank": 8
+    },
+    {
+      "districtId": 2,
+      "districtName": "Faridpur",
+      "temp2Pm": 25.18,
+      "pm25_2Pm": 46.06,
+      "rank": 9
+    },
+    {
+      "districtId": 28,
+      "districtName": "Kurigram",
+      "temp2Pm": 25.240000000000002,
+      "pm25_2Pm": 45.08,
+      "rank": 10
     }
   ]
 }

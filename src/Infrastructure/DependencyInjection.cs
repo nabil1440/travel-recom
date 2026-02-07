@@ -86,6 +86,8 @@ public static class DependencyInjection
     // ---------- Redis daily forecast cache ----------
     services.AddScoped<IDailyForecastCache, RedisDailyForecastCache>();
 
+    services.AddScoped<ISourceDistrictResolver, NearestNeighborSourceDistrictResolver>(); 
+
     return services;
   }
 }

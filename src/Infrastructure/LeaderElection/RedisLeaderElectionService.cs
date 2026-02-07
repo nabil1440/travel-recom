@@ -1,11 +1,12 @@
  namespace Infrastructure.LeaderElection;
 
+using AppCore.Abstractions.Services;
 using StackExchange.Redis;
 
-public sealed class RedisLeaderElectionService
+public sealed class RedisLeaderElectionService : ILeaderElectionService
 {
     private readonly IDatabase _db;
-    private const string LeaderKey = "leaderboard:leader";
+    private const string LeaderKeyPrefix = "leader";
 
     public RedisLeaderElectionService(IConnectionMultiplexer redis)
     {
@@ -13,11 +14,14 @@ public sealed class RedisLeaderElectionService
     }
 
     public async Task<bool> TryAcquireAsync(
+        string lockName,
         TimeSpan ttl,
         CancellationToken cancellationToken)
     {
+        var key = $"{LeaderKeyPrefix}:{lockName}";
+
         return await _db.StringSetAsync(
-            LeaderKey,
+            key,
             Environment.MachineName,
             ttl,
             when: When.NotExists);

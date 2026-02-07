@@ -26,7 +26,8 @@ public sealed class WeatherSnapshotRepository : IWeatherSnapshotRepository
         foreach (var snapshot in snapshots)
         {
             var entity = await _dbContext.DistrictWeatherSnapshots.FirstOrDefaultAsync(
-                e => e.DistrictId == snapshot.DistrictId && e.Date == snapshot.Date,
+                e => e.DistrictId == snapshot.DistrictId &&
+                     e.AggregationDate == snapshot.AggregationDate,
                 cancellationToken
             );
 
@@ -36,7 +37,7 @@ public sealed class WeatherSnapshotRepository : IWeatherSnapshotRepository
                     new DistrictWeatherSnapshotEntity
                     {
                         DistrictId = snapshot.DistrictId,
-                        Date = snapshot.Date,
+                        AggregationDate = snapshot.AggregationDate,
                         Temp2Pm = snapshot.Temp2Pm,
                         Pm25_2Pm = snapshot.Pm25_2Pm,
                         CreatedAt = DateTime.UtcNow
@@ -59,7 +60,7 @@ public sealed class WeatherSnapshotRepository : IWeatherSnapshotRepository
     )
     {
         var latestDate = await _dbContext.DistrictWeatherSnapshots.MaxAsync(
-            e => (DateOnly?)e.Date,
+            e => (DateOnly?)e.AggregationDate,
             cancellationToken
         );
 
@@ -67,12 +68,16 @@ public sealed class WeatherSnapshotRepository : IWeatherSnapshotRepository
             return Array.Empty<DistrictWeatherSnapshot>();
 
         var entities = await _dbContext
-            .DistrictWeatherSnapshots.Where(e => e.Date == latestDate)
+            .DistrictWeatherSnapshots.Where(e => e.AggregationDate == latestDate)
             .AsNoTracking()
             .ToListAsync(cancellationToken);
 
         return entities
-            .Select(e => new DistrictWeatherSnapshot(e.DistrictId, e.Date, e.Temp2Pm, e.Pm25_2Pm))
+            .Select(e => new DistrictWeatherSnapshot(
+                e.DistrictId,
+                e.AggregationDate,
+                e.Temp2Pm,
+                e.Pm25_2Pm))
             .ToList();
     }
 }

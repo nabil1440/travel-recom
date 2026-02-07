@@ -4,6 +4,7 @@ using Hangfire;
 using Hangfire.PostgreSql;
 using Infrastructure;
 using Infrastructure.BackgroundJobs;
+using Infrastructure.Jobs;
 using Infrastructure.Persistence;
 using Infrastructure.Redis;
 using Microsoft.AspNetCore.Mvc;
@@ -30,15 +31,15 @@ using (var scope = app.Services.CreateScope())
 {
     var recurringJobs = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
 
-    recurringJobs.AddOrUpdate<LeaderboardRefreshJob>(
-        "leaderboard-refresh",
-        job => job.RunAsync(CancellationToken.None),
+    recurringJobs.AddOrUpdate<WeatherDataFetchJob>(
+        "weather-data-fetch",
+        job => job.ExecuteAsync(CancellationToken.None),
         Cron.Hourly
     );
 
     var backgroundJobs = scope.ServiceProvider.GetRequiredService<IBackgroundJobClient>();
 
-    backgroundJobs.Enqueue<LeaderboardRefreshJob>(job => job.RunAsync(CancellationToken.None));
+    backgroundJobs.Enqueue<WeatherDataFetchJob>(job => job.ExecuteAsync(CancellationToken.None));
 }
 
 // Configure the HTTP request pipeline.

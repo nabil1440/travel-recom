@@ -1,8 +1,8 @@
 namespace AppCore.Models;
 
-public sealed record DistrictWeatherSnapshot(
+public sealed record DailyDistrictForecast(
     int DistrictId,
-    DateOnly AggregationDate,
+    DateOnly ForecastDate,
     double Temp2Pm,
     double Pm25_2Pm
 );

@@ -1,61 +1,81 @@
 namespace AppCore.Services;
 
-using AppCore.Abstractions.Aggregation;
-using AppCore.Abstractions.DataFetching;
 using AppCore.Abstractions.Leaderboard;
 using AppCore.Abstractions.Persistence;
 using AppCore.Abstractions.Services;
+using AppCore.Events;
 using AppCore.Models;
 using Microsoft.Extensions.Logging;
 
 public sealed class DistrictRankingService : IDistrictRankingService
 {
-  private readonly IDataFetchingService _dataFetchingService;
-  private readonly IWeatherAggregationService _aggregationService;
+  private static readonly TimeSpan LeaderTtl = TimeSpan.FromMinutes(10);
+  private const string LockName = "district-ranking";
+
   private readonly IWeatherSnapshotRepository _snapshotRepository;
+  private readonly ILeaderboardSnapshotRepository _leaderboardSnapshotRepository;
   private readonly ILeaderboardStore _leaderboardStore;
   private readonly IDistrictService _districtService;
+  private readonly ILeaderElectionService _leaderElection;
   private readonly ILogger<DistrictRankingService> _logger;
 
   public DistrictRankingService(
-      IDataFetchingService dataFetchingService,
-      IWeatherAggregationService aggregationService,
       IWeatherSnapshotRepository snapshotRepository,
+      ILeaderboardSnapshotRepository leaderboardSnapshotRepository,
       IDistrictService districtService,
+      ILeaderElectionService leaderElection,
       ILeaderboardStore leaderboardStore,
       ILogger<DistrictRankingService> logger
   )
   {
-    _dataFetchingService = dataFetchingService;
-    _aggregationService = aggregationService;
     _snapshotRepository = snapshotRepository;
+    _leaderboardSnapshotRepository = leaderboardSnapshotRepository;
     _leaderboardStore = leaderboardStore;
     _districtService = districtService;
+    _leaderElection = leaderElection;
     _logger = logger;
   }
 
-  public async Task RefreshLeaderboardAsync(CancellationToken cancellationToken)
+  public async Task HandleWeatherBatchAsync(
+      WeatherDataBatchFetched @event,
+      CancellationToken cancellationToken)
   {
-    var districts = await GetDistrictsAsync(cancellationToken);
+    var acquired = await _leaderElection.TryAcquireAsync(
+        LockName,
+        LeaderTtl,
+        cancellationToken);
 
-    if (districts.Count == 0)
+    if (!acquired)
     {
+      _logger.LogInformation(
+          "DistrictRankingService skipped: not leader for batch {BatchId}",
+          @event.BatchId);
       return;
     }
 
-    // Build lookup once
-    var districtMap = districts.ToDictionary(d => d.Id);
+    _logger.LogInformation(
+        "DistrictRankingService processing batch {BatchId} with {Count} districts",
+        @event.BatchId, @event.Districts.Count);
 
-    // Parallel fetch + aggregation
-    var tasks = districts.Select(d => FetchAndAggregateAsync(d, cancellationToken));
+    var snapshots = @event.Districts
+        .Where(d => d.Forecasts.Count > 0)
+        .Select(d =>
+        {
+          var avgTemp = d.Forecasts.Average(f => f.Temp2Pm);
+          var avgPm25 = d.Forecasts.Average(f => f.Pm25_2Pm);
+          var aggregationDate = d.Forecasts.Min(f => f.Date);
 
-    var results = await Task.WhenAll(tasks);
-
-    var snapshots = results.Where(s => s is not null).Cast<DistrictWeatherSnapshot>().ToList();
+          return new DistrictWeatherSnapshot(
+              d.DistrictId,
+              aggregationDate,
+              avgTemp,
+              avgPm25);
+        })
+        .ToList();
 
     if (snapshots.Count == 0)
     {
-      // No successful updates, keep existing leaderboard
+      _logger.LogWarning("No valid snapshots to rank in batch {BatchId}", @event.BatchId);
       return;
     }
 
@@ -63,6 +83,9 @@ public sealed class DistrictRankingService : IDistrictRankingService
     await _snapshotRepository.SaveAsync(snapshots, cancellationToken);
 
     // Rank + enrich with district metadata
+    var districts = await GetDistrictsAsync(cancellationToken);
+    var districtMap = districts.ToDictionary(d => d.Id);
+
     var rankedDistricts = snapshots
         .Where(s => districtMap.ContainsKey(s.DistrictId))
         .OrderBy(s => s.Temp2Pm)
@@ -85,6 +108,15 @@ public sealed class DistrictRankingService : IDistrictRankingService
 
     // Store leaderboard projection (Redis ZSET)
     await _leaderboardStore.StoreAsync(rankedDistricts, cancellationToken);
+
+    await _leaderboardSnapshotRepository.SaveAsync(
+      rankedDistricts,
+      DateTime.UtcNow,
+      cancellationToken);
+
+    _logger.LogInformation(
+      "DistrictRankingService completed: {Count} districts ranked for batch {BatchId}",
+      rankedDistricts.Count, @event.BatchId);
   }
 
   public async Task<IReadOnlyCollection<RankedDistrict>> GetTopDistrictsAsync(
@@ -108,45 +140,5 @@ public sealed class DistrictRankingService : IDistrictRankingService
   {
     var districts = await _districtService.GetDistrictsAsync(cancellationToken);
     return districts;
-  }
-
-  private async Task<DistrictWeatherSnapshot?> FetchAndAggregateAsync(
-      District district,
-      CancellationToken cancellationToken
-  )
-  {
-    try
-    {
-      var weatherTask = _dataFetchingService.GetWeatherForecastAsync(
-          district.Latitude,
-          district.Longitude,
-          cancellationToken
-      );
-
-      var airQualityTask = _dataFetchingService.GetAirQualityForecastAsync(
-          district.Latitude,
-          district.Longitude,
-          cancellationToken
-      );
-
-      await Task.WhenAll(weatherTask, airQualityTask);
-
-      return _aggregationService.Aggregate(
-          district,
-          weatherTask.Result,
-          airQualityTask.Result
-      );
-    }
-    catch (Exception ex)
-    {
-      _logger.LogWarning(
-          ex,
-          "Failed to refresh weather data for district {DistrictId} ({DistrictName})",
-          district.Id,
-          district.Name
-      );
-
-      return null;
-    }
   }
 }

@@ -1,5 +1,7 @@
 namespace Infrastructure.Persistence.Repositories;
 
+using AppCore.Abstractions.Persistence;
+using AppCore.Models;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -13,36 +15,54 @@ public sealed class DailyDistrictForecastRepository : IDailyDistrictForecastRepo
         _db = db;
     }
 
-    public async Task<DailyDistrictForecastEntity?> GetAsync(
+    public async Task<DailyDistrictForecast?> GetAsync(
         int districtId,
         DateOnly date,
         CancellationToken cancellationToken)
     {
-        return await _db.Set<DailyDistrictForecastEntity>()
+        var entity = await _db.Set<DailyDistrictForecastEntity>()
             .AsNoTracking()
-            .Include(x => x.District)
             .FirstOrDefaultAsync(
                 x => x.DistrictId == districtId &&
                      x.ForecastDate == date,
                 cancellationToken);
+
+        if (entity is null)
+        {
+            return null;
+        }
+
+        return new DailyDistrictForecast(
+            entity.DistrictId,
+            entity.ForecastDate,
+            entity.Temp2Pm,
+            entity.Pm25_2Pm);
     }
 
     public async Task SaveAsync(
-        IEnumerable<DailyDistrictForecastEntity> entities,
+        IEnumerable<DailyDistrictForecast> forecasts,
         CancellationToken cancellationToken)
     {
-        foreach (var entity in entities)
+        foreach (var forecast in forecasts)
         {
             // Upsert semantics: one row per (DistrictId, ForecastDate)
             var exists = await _db.Set<DailyDistrictForecastEntity>()
                 .AnyAsync(
-                    x => x.DistrictId == entity.DistrictId &&
-                         x.ForecastDate == entity.ForecastDate,
+                    x => x.DistrictId == forecast.DistrictId &&
+                         x.ForecastDate == forecast.ForecastDate,
                     cancellationToken);
 
             if (!exists)
             {
-                entity.CreatedAt = DateTime.UtcNow;
+                var entity = new DailyDistrictForecastEntity
+                {
+                    DistrictId = forecast.DistrictId,
+                    ForecastDate = forecast.ForecastDate,
+                    Temp2Pm = forecast.Temp2Pm,
+                    Pm25_2Pm = forecast.Pm25_2Pm,
+                    CreatedAt = DateTime.UtcNow
+                };
+
                 _db.Add(entity);
             }
         }

@@ -1,25 +1,26 @@
 namespace Infrastructure.Services;
 
+using AppCore.Abstractions.Persistence;
 using AppCore.Abstractions.Services;
 using AppCore.Models;
-using Infrastructure.Persistence.Repositories;
-using Infrastructure.Redis;
-using Infrastructure.Redis.Models;
 
 public sealed class ForecastLookupService : IForecastLookupService
 {
     private readonly IDailyForecastCache _cache;
     private readonly IDailyDistrictForecastRepository _repository;
+    private readonly IDistrictService _districtService;
 
     // TTL slightly longer than forecast horizon
     private static readonly TimeSpan CacheTtl = TimeSpan.FromDays(8);
 
     public ForecastLookupService(
         IDailyForecastCache cache,
-        IDailyDistrictForecastRepository repository)
+        IDailyDistrictForecastRepository repository,
+        IDistrictService districtService)
     {
         _cache = cache;
         _repository = repository;
+        _districtService = districtService;
     }
 
     public async Task<ForecastLookupResult> GetForecastAsync(
@@ -48,31 +49,31 @@ public sealed class ForecastLookupService : IForecastLookupService
         }
 
         // 2. Fallback to DB
-        var entity = await _repository.GetAsync(districtId, date, cancellationToken);
+        var forecast = await _repository.GetAsync(districtId, date, cancellationToken);
 
-        if (entity is null)
+        if (forecast is null)
         {
             return ForecastLookupResult.NotFound();
         }
 
-        var forecast = new DailyDistrictForecast(
-            entity.DistrictId,
-            entity.ForecastDate,
-            entity.Temp2Pm,
-            entity.Pm25_2Pm);
-
         // 3. Hydrate cache (best-effort)
         try
         {
-            await _cache.SetAsync(
-                new DailyForecastCacheItem(
-                    entity.DistrictId,
-                    entity.District.Name,
-                    entity.ForecastDate,
-                    entity.Temp2Pm,
-                    entity.Pm25_2Pm),
-                CacheTtl,
-                cancellationToken);
+            var districts = await _districtService.GetDistrictsAsync(cancellationToken);
+            var districtMap = districts.ToDictionary(d => d.Id);
+
+            if (districtMap.TryGetValue(forecast.DistrictId, out var district))
+            {
+                await _cache.SetAsync(
+                    new DailyForecastCacheItem(
+                        forecast.DistrictId,
+                        district.Name,
+                        forecast.ForecastDate,
+                        forecast.Temp2Pm,
+                        forecast.Pm25_2Pm),
+                    CacheTtl,
+                    cancellationToken);
+            }
         }
         catch
         {

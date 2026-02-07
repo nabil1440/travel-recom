@@ -1,7 +1,8 @@
 namespace Infrastructure.Redis;
 
 using System.Text.Json;
-using Infrastructure.Redis.Models;
+using AppCore.Abstractions.Persistence;
+using AppCore.Models;
 using StackExchange.Redis;
 
 public sealed class RedisDailyForecastCache : IDailyForecastCache
